@@ -1,13 +1,12 @@
 /* ============================================================
    paper.css — the entire design
    Palette:  newsprint grey, ink, registration red, ghost cyan
-   Type:     Bodoni Moda (display) / Source Serif 4 (body)
+   Type:     blackletter masthead / Archivo condensed caps (headlines) / Source Serif 4 (body)
              Encode Sans Condensed (utility) / JetBrains Mono (data)
    Signature: offset misregistration on the masthead + halftone plates
    ============================================================ */
 
 :root {
-    color-scheme: light;
   --paper:      #e3dfd4;
   --paper-deep: #d8d3c5;
   --ink:        #17171b;
@@ -17,7 +16,8 @@
   --spot:       #b3122b;   /* registration red — section flags, nothing else */
   --ghost:      #2aa4b8;   /* cyan misregistration only. never for text. */
 
-  --display: "Bodoni Moda", Georgia, serif;
+  --masthead: "Manufacturing Consent", "Old English Text MT", serif;
+  --display: "Archivo", "Arial Narrow", sans-serif;
   --body:    "Source Serif 4", Georgia, serif;
   --util:    "Encode Sans Condensed", "Arial Narrow", sans-serif;
   --data:    "JetBrains Mono", ui-monospace, monospace;
@@ -26,11 +26,31 @@
   --gutter: 1.6rem;
 }
 
+/* The theme is an attribute on <html>, set by a tiny inline script before paint.
+   That keeps all the dark values in ONE selector instead of duplicating them
+   across a media query and an override. */
+:root { color-scheme: light; }
+
+:root[data-theme="dark"] {
+  /* microfiche: there is no such thing as a newspaper at night, so we pick
+     the next most honest object — a reel of amber film on a reader. */
+  color-scheme: dark;
+  --paper:      #0d0e11;
+  --paper-deep: #16171b;
+  --ink:        #e9dfc6;
+  --ink-soft:   #a89f8a;
+  --ink-faint:  #6d6759;
+  --rule:       #3a3a38;
+  --spot:       #e2685f;
+  --ghost:      #2aa4b8;
+}
+
 *, *::before, *::after { box-sizing: border-box; }
 
 body {
   margin: 0;
   background: var(--paper);
+  position: relative;
   color: var(--ink);
   font-family: var(--body);
   font-size: 1.0625rem;
@@ -58,6 +78,19 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23g)'/%3E%3C/svg%3E");
 }
 
+/* grain on a dark page must lighten, not darken, or it only muddies */
+:root[data-theme="dark"] body::before { mix-blend-mode: screen; opacity: .16; }
+
+/* ---------- the appearance switch ---------- */
+.edition-toggle {
+  font: inherit; font-family: var(--util); font-size: .72rem;
+  letter-spacing: .09em; text-transform: uppercase;
+  background: none; border: 0; padding: 0; cursor: pointer;
+  color: var(--ink-faint); text-decoration: underline;
+  text-decoration-color: var(--rule); text-underline-offset: 3px;
+}
+.edition-toggle:hover { color: var(--spot); }
+
 /* ---------- rules ---------- */
 .rule      { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 .rule--hair{ border-top-width: 1px; }
@@ -72,13 +105,34 @@ body::before {
 }
 .folio span:nth-child(2) { text-align: center; }
 
-/* ---------- masthead ---------- */
+/* ---------- masthead + ears ---------- */
+/* "ears" is the real term for the boxes flanking a masthead. they are always
+   there in a real paper, and their absence is why a masthead floats. */
+.masthead-row {
+  display: grid;
+  grid-template-columns: 9rem 1fr 9rem;
+  align-items: center;
+  gap: var(--gutter);
+}
+.ear {
+  font-family: var(--util); font-size: .72rem; line-height: 1.4;
+  color: var(--ink-soft); border: 1px solid var(--rule); padding: .45rem .55rem;
+}
+.ear--right { text-align: right; }
+.ear__label {
+  display: block; font-weight: 600; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--ink); font-size: .66rem;
+}
+@media (max-width: 720px) {
+  .masthead-row { grid-template-columns: 1fr; }
+  .ear { display: none; }   /* on a phone the masthead needs the whole width */
+}
+
 .masthead { text-align: center; padding: .9rem 0 .6rem; }
 .masthead__name {
-  font-family: var(--display);
-  font-optical-sizing: auto;
-  font-weight: 800;
-  font-size: clamp(2.6rem, 9vw, 6rem);
+  font-family: var(--masthead);
+  font-weight: 400;
+  font-size: clamp(2.2rem, 7.5vw, 5rem);
   line-height: .92;
   letter-spacing: -0.02em;
   margin: 0;
@@ -110,6 +164,54 @@ body::before {
   border-bottom: 1px solid var(--ink); padding-bottom: .3rem; margin-bottom: .6rem;
 }
 
+/* ---------- dateline ---------- */
+/* wire-service convention: body copy opens with where it was filed from. */
+.dateline {
+  font-family: var(--util); font-weight: 600; font-size: .8em;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--ink);
+}
+
+/* ---------- the seconds row ---------- */
+.seconds {
+  display: grid; grid-template-columns: 1fr; gap: 0 var(--gutter);
+}
+.seconds__item { padding: 1rem 0; border-top: 1px solid var(--rule); }
+@media (min-width: 700px) {
+  .seconds { grid-template-columns: 1fr 1fr; }
+  .seconds__item:nth-child(2n) { border-left: 1px solid var(--rule); padding-left: var(--gutter); }
+}
+@media (min-width: 1100px) {
+  .seconds { grid-template-columns: repeat(4, 1fr); }
+  .seconds__item:nth-child(n) { border-left: 1px solid var(--rule); padding-left: var(--gutter); }
+  .seconds__item:first-child { border-left: 0; padding-left: 0; }
+}
+
+/* ---------- index box ---------- */
+.index-box { border: 1px solid var(--ink); padding: .7rem .8rem; }
+.index-box__row {
+  display: flex; align-items: baseline; gap: .4rem;
+  font-family: var(--util); font-size: .8rem; color: var(--ink);
+  text-decoration: none; padding: .22rem 0;
+  text-transform: capitalize;
+}
+.index-box__row:hover { color: var(--spot); }
+/* the dotted leader, like a real index. it is just a stretchy dashed rule. */
+.index-box__leader {
+  flex: 1; border-bottom: 1px dotted var(--rule); transform: translateY(-.2em);
+}
+
+/* ---------- corrections ---------- */
+.correction-box { border-top: 3px double var(--ink); margin-top: 1.4rem; padding-top: .6rem; }
+.correction-box p { font-size: .85rem; color: var(--ink-soft); margin: .3rem 0 0; }
+.correction-box a { color: var(--ink); }
+.correction {
+  border-left: 3px solid var(--spot); background: var(--paper-deep);
+  padding: .6rem .8rem; font-size: .9rem; margin-bottom: 1.2rem;
+}
+
+/* ---------- figures ---------- */
+.figure { margin: 0 0 1rem; }
+
 /* ---------- front page grid ---------- */
 .front {
   display: grid;
@@ -127,17 +229,23 @@ body::before {
 }
 
 /* ---------- headlines ---------- */
+/* headlines: condensed gothic, all caps, like an American paper.
+   wdth is a REAL axis (62-125) — the designer drew every width, so narrowing
+   keeps every stroke correct. this is the honest version of "stretch to fit". */
 .hl {
-  font-family: var(--display); font-optical-sizing: auto;
-  font-weight: 700; line-height: 1.02; letter-spacing: -0.015em;
+  font-family: var(--display);
+  font-variation-settings: "wdth" 72, "wght" 800;
+  line-height: 1.04; letter-spacing: 0;
   margin: .2rem 0 .4rem; text-wrap: balance;
 }
+.hl--lead, .hl--sec { text-transform: uppercase; }
+.hl--lead { font-variation-settings: "wdth" 66, "wght" 900; letter-spacing: -.005em; }
 /* the anchor may be inside .hl (headlines) or be the .hl itself (briefs rail) */
 .hl a, a.hl { color: inherit; text-decoration: none; }
 .hl a:hover, a.hl:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .hl--lead { font-size: clamp(2rem, 4.6vw, 3.4rem); }
 .hl--sec  { font-size: clamp(1.4rem, 2.4vw, 1.9rem); }
-.hl--brief{ font-size: 1.05rem; font-weight: 600; line-height: 1.2; }
+.hl--brief { font-size: 1.05rem; font-variation-settings: "wdth" 85, "wght" 600; line-height: 1.25; }
 
 .dek {
   font-family: var(--body); font-style: italic; font-size: 1.05rem;
@@ -149,7 +257,15 @@ body::before {
 }
 
 /* ---------- teaser columns (front page only — never article bodies) ---------- */
-.teaser { font-size: .95rem; }
+/* justified, hyphenated columns — this is what makes a column look printed.
+   justification without hyphenation opens rivers of white; the two ship together. */
+.teaser {
+  font-size: .95rem;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  text-wrap: pretty;
+}
 @media (min-width: 851px) {
   .teaser--2col { columns: 2; column-gap: var(--gutter); column-rule: 1px solid var(--rule); }
 }
@@ -160,17 +276,20 @@ body::before {
 }
 .jump:hover { text-decoration: underline; }
 
-/* ---------- plate (halftone photo) ---------- */
+/* ---------- plate (photo) ---------- */
+/* the halftone is baked into the file by paper/images.py at build time, and the
+   page grain sits over everything already. so this is just a frame. */
 .plate { position: relative; overflow: hidden; background: var(--paper-deep); }
 .plate img {
   display: block; width: 100%; height: 100%; object-fit: cover;
-  filter: grayscale(1) contrast(1.35) brightness(1.05);
+  /* black dots on white paper: multiply drops the white, prints the dots */
+  mix-blend-mode: multiply;
 }
-.plate::after {
-  content: ""; position: absolute; inset: 0; pointer-events: none;
-  background-image: radial-gradient(circle at center, var(--ink) 0.9px, transparent 1.1px);
-  background-size: 3px 3px;
-  mix-blend-mode: multiply; opacity: .45;
+/* At night the ink is light, so the plate is a negative: invert turns the dots
+   white, and screen is multiply's mirror — it drops the black instead. */
+:root[data-theme="dark"] .plate img {
+  filter: invert(1) sepia(.42) brightness(.92);
+  mix-blend-mode: screen;
 }
 .plate__caption {
   font-family: var(--util); font-size: .72rem; color: var(--ink-faint);
@@ -214,6 +333,7 @@ body::before {
 /* ---------- article ---------- */
 .article { max-width: var(--measure); margin: 2.5rem auto 0; }
 .article__body > * + * { margin-top: 1.1rem; }
+.article__body p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 .article__body h2 {
   font-family: var(--display); font-size: 1.55rem; font-weight: 700;
   margin-top: 2.2rem; line-height: 1.15;

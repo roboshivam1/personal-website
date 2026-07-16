@@ -19,6 +19,15 @@ SITE = {
         "Jaipur. Projects, essays, lab notes, and the occasional obituary."
     ),
     "first_issue": date(2026, 7, 1),
+    # --- front page furniture. placeholders: replace with real values. ---
+    "price": "Free",
+    "edition": "★★★ Late Edition",
+    "circulation": 11,          # be honest. it is funnier honest.
+    "weather": {                # placeholder — a build-time fetch can fill this later
+        "summary": "Hazy, hot",
+        "high": 39,
+        "low": 28,
+    },
     "nav": [
         ("Front page", "/"),
         ("Workshop", "/workshop/"),

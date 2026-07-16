@@ -2,6 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <script>
+    /* Runs before paint, so the page never flashes the wrong edition.
+       No stored choice? Follow the reader's system setting. */
+    (function () {
+      var t = localStorage.getItem("edition");
+      if (t !== "light" && t !== "dark") {
+        t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}{{ SITE.name }}{% endblock %}</title>
   <meta name="description" content="{{ description|default(SITE.description) }}">
@@ -10,7 +21,7 @@
   <link rel="alternate" type="application/rss+xml" title="{{ SITE.name }}" href="/rss.xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&family=Encode+Sans+Condensed:wght@400;600&family=JetBrains+Mono:wght@400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,900&family=Manufacturing+Consent&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&family=Encode+Sans+Condensed:wght@400;600&family=JetBrains+Mono:wght@400&display=swap">
   <link rel="stylesheet" href="/paper.css">
 </head>
 <body>
@@ -19,13 +30,27 @@
     <div class="folio">
       <span>Vol. I &middot; No. {{ issue_number(today) }}</span>
       <span>{{ SITE.city }} &middot; {{ today|long_date }}</span>
+      <button class="edition-toggle" type="button" data-edition-toggle
+        aria-live="polite">Night edition</button>
       <span>Est. {{ SITE.established }}</span>
     </div>
     <hr class="rule rule--hair">
-    <div class="masthead">
-      <h1 class="masthead__name"><a href="/">{{ SITE.name }}</a></h1>
-      <hr class="masthead__rule">
-      <p class="masthead__motto">{{ SITE.motto }}</p>
+    <div class="masthead-row">
+      <div class="ear">
+        <span class="ear__label">Weather</span>
+        {{ SITE.weather.summary }}<br>
+        {{ SITE.weather.high }}&deg; / {{ SITE.weather.low }}&deg;
+      </div>
+      <div class="masthead">
+        <h1 class="masthead__name"><a href="/">{{ SITE.name }}</a></h1>
+        <hr class="masthead__rule">
+        <p class="masthead__motto">{{ SITE.motto }}</p>
+      </div>
+      <div class="ear ear--right">
+        <span class="ear__label">{{ SITE.price }}</span>
+        {{ SITE.edition }}<br>
+        Circulation {{ SITE.circulation }}
+      </div>
     </div>
     <nav class="nav" aria-label="Sections">
       {% for label, href in SITE.nav %}
@@ -40,4 +65,24 @@
 
   <footer class="folio" style="margin-top:4rem;border-top:3px double var(--ink);padding-top:.8rem">
     <span>Set in Bodoni &amp; Source Serif</span>
-    <span>Printed in {{ SITE.city }}
+    <span>Printed in {{ SITE.city }}</span>
+    <span><a href="/rss.xml">RSS</a></span>
+  </footer>
+</div>
+<script>
+  (function () {
+    var root = document.documentElement;
+    var btn = document.querySelector("[data-edition-toggle]");
+    var label = function () {
+      btn.textContent = root.dataset.theme === "dark" ? "Day edition" : "Night edition";
+    };
+    label();
+    btn.addEventListener("click", function () {
+      root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+      localStorage.setItem("edition", root.dataset.theme);
+      label();
+    });
+  })();
+</script>
+</body>
+</html>

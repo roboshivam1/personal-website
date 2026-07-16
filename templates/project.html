@@ -1,5 +1,5 @@
 {% extends "article.html" %}
-{% block dateline %}
+{% block infobar %}
 <p class="byline" style="border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:.6rem 0;margin-bottom:1.4rem">
   Status: {{ story.status }}{% if story.stack %} &middot; Built with {{ story.stack|join(', ') }}{% endif %}
   {% if story.link %} &middot; <a href="{{ story.link }}" style="color:var(--spot)">Visit &rarr;</a>{% endif %}

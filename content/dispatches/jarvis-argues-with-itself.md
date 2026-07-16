@@ -1,10 +1,11 @@
 ---
-title: A multi-agent assistant, running quietly on one desk
+title: A MULTI-AGENT ASSISTANT, RUNNING QUIETLY ON ONE DESK
 dek: Six months in, JARVIS mk2 still argues with itself — and that turned out to be the feature, not the bug
 date: 2026-07-12
 section: software
 weight: 100
 tags: [jarvis, agents, macos]
+hero: /img/shivamkapoorpfp.png
 ---
 
 The first version was one loop and a lot of hope. Ask it something, it thinks,

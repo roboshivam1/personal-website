@@ -2,9 +2,10 @@
 
 import shutil
 import sys
-from collections import defaultdict
+from collections import Counter, defaultdict
 from pathlib import Path
 
+from .images import process_all as screen_images
 from .config import DIST, SECTION_BLURB, STATIC
 from .issue import issue_number
 from .loader import load_all
@@ -37,11 +38,16 @@ def build(include_drafts: bool = False) -> int:
 
     # --- front page: a function of weight, not a hand-maintained file ---
     lead, *rest = stories
+
+    # "INSIDE TODAY" — one line per desk, with how much is in it.
+    index = Counter(s.section for s in stories)
+
     write("/", env.get_template("index.html").render(
-        path="/", lead=lead, seconds=rest[:2], briefs=rest[2:7],
+        path="/", lead=lead, seconds=rest[:4], briefs=rest[4:9],
         bench=sorted(projects, key=lambda p: -p.date.toordinal())[:4],
+        index=sorted(index.items()),
+        corrections=[s for s in stories if s.correction][:2],
     ))
-    pages += 1
 
     # --- one page per story ---
     for s in stories:
@@ -93,13 +99,19 @@ def build(include_drafts: bool = False) -> int:
     )
     (DIST / "rss.xml").write_text(feed, encoding="utf-8")
 
-    # --- static assets, copied verbatim ---
+    # --- static assets, copied verbatim (img/ is handled separately) ---
     for asset in STATIC.iterdir():
+        if asset.name == "img":
+            continue
         dest = DIST / asset.name
         shutil.copytree(asset, dest) if asset.is_dir() else shutil.copy2(asset, dest)
 
-    return pages
+    # --- photographs, through the press ---
+    screened = screen_images()
+    if screened:
+        print(f"Screened {screened} photographs")
 
+    return pages
 
 def main() -> None:
     drafts = "--drafts" in sys.argv

@@ -14,6 +14,9 @@ class Story(BaseModel):
     date: date
     weight: int = 10
     hero: str | None = None
+    hero_caption: str | None = None
+    dateline: str | None = None      # None -> the paper's own city
+    correction: str | None = None
     tags: list[str] = Field(default_factory=list)
     draft: bool = False
 

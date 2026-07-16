@@ -7,11 +7,17 @@
   {% if story.dek %}<p class="dek">{{ story.dek }}</p>{% endif %}
   <p class="byline">By {{ SITE.author }} &middot; {{ story.date|short_date }}</p>
   <hr class="rule rule--hair" style="margin-bottom:1.4rem">
-  {% if story.hero %}
-  <div class="plate" style="aspect-ratio:3/2;margin-bottom:1.4rem"><img src="{{ story.hero }}" alt=""></div>
+  {% if story.correction %}
+  <p class="correction"><strong>Correction:</strong> {{ story.correction }}</p>
   {% endif %}
-  {% block dateline %}{% endblock %}
-  <div class="article__body">{{ story.body|markdown }}</div>
+  {% if story.hero %}
+  <figure class="figure">
+    <div class="plate" style="aspect-ratio:3/2"><img src="{{ story.hero }}" alt=""></div>
+    {% if story.hero_caption %}<figcaption class="plate__caption">{{ story.hero_caption }}</figcaption>{% endif %}
+  </figure>
+  {% endif %}
+  {% block infobar %}{% endblock %}
+  <div class="article__body">{{ story.body|markdown|dateline(story.dateline or SITE.city) }}</div>
   {% if story.tags %}
   <p class="byline" style="margin-top:2.5rem;border-top:1px solid var(--rule);padding-top:.8rem">
     Filed under: {{ story.tags|join(' · ') }}
