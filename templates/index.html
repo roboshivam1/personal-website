@@ -1,0 +1,60 @@
+{% extends "broadsheet.html" %}
+{% block main %}
+<div class="front">
+  <div>
+    <p class="flag">Lead story &middot; {{ lead.section|replace('-', ' ') }}</p>
+    <h2 class="hl hl--lead"><a href="{{ lead.url }}">{{ lead.title }}</a></h2>
+    {% if lead.dek %}<p class="dek">{{ lead.dek }}</p>{% endif %}
+    <p class="byline">By {{ SITE.author }} &middot; {{ lead.date|short_date }}</p>
+    {% if lead.hero %}
+    <figure style="margin:0 0 1rem">
+      <div class="plate" style="aspect-ratio:16/9"><img src="{{ lead.hero }}" alt=""></div>
+    </figure>
+    {% endif %}
+    <div class="teaser teaser--2col">{{ lead.body|markdown }}</div>
+    <p style="margin:.4rem 0 0"><a class="jump" href="{{ lead.url }}">Continued inside &rarr;</a></p>
+
+    <hr class="rule rule--thick" style="margin:2rem 0 1.2rem">
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0 var(--gutter)">
+      {% for s in seconds %}
+      <div{% if not loop.first %} style="border-left:1px solid var(--rule);padding-left:var(--gutter)"{% endif %}>
+        <p class="flag">{{ s.section|replace('-', ' ') }}</p>
+        <h3 class="hl hl--sec"><a href="{{ s.url }}">{{ s.title }}</a></h3>
+        {% if s.dek %}<p class="dek" style="font-size:.95rem">{{ s.dek }}</p>{% endif %}
+        <p class="byline">{{ s.date|short_date }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <aside class="front__aside">
+    <p class="flag">On the bench</p>
+    <ul class="briefs">
+      {% for p in bench %}
+      <li>
+        <a href="{{ p.url }}" class="hl hl--brief" style="display:block">{{ p.title }}</a>
+        <span class="brief__meta">{{ p.status }}{% if p.stack %} &middot; {{ p.stack[:2]|join(', ') }}{% endif %}</span>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <p class="flag" style="margin-top:1.6rem">In brief</p>
+    <ul class="briefs">
+      {% for s in briefs %}
+      <li>
+        <a href="{{ s.url }}" class="hl hl--brief" style="display:block">{{ s.title }}</a>
+        <span class="brief__meta">{{ s.date|short_date }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <div class="classified">
+      <p class="flag" style="color:var(--ink);border-color:var(--rule)">Classifieds</p>
+      <p><strong>WANTED:</strong> interesting problems. Available for consulting on AI systems,
+      internal tooling, and anything that needs both a soldering iron and a terminal.
+      <a href="/about/">Write to the editor</a>.</p>
+    </div>
+  </aside>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "broadsheet.html" %}
+{% block title %}Archive — {{ SITE.name }}{% endblock %}
+{% block main %}
+<div class="article">
+  <p class="flag">Back issues</p>
+  <p class="dek">Everything published, by issue. One issue per fortnight, whether or not there was news.</p>
+  <div style="margin-top:1.5rem">
+    {% for no, items in issues %}
+    <div class="issue">
+      <div class="issue__no">No. {{ '%02d'|format(no) }}<br>{{ items[0].date|short_date }}</div>
+      <div>
+        {% for s in items %}
+        <div style="margin-bottom:.4rem">
+          <a href="{{ s.url }}" style="color:var(--ink);text-decoration-color:var(--rule)">{{ s.title }}</a>
+          <span class="brief__meta"> &middot; {{ s.section|replace('-', ' ') }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

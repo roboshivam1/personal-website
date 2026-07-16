@@ -1,0 +1,16 @@
+{% extends "broadsheet.html" %}
+{% block title %}Obituaries — {{ SITE.name }}{% endblock %}
+{% block main %}
+<div class="article">
+  <p class="flag">Obituaries</p>
+  <p class="dek">Every project here was going to change everything. Cause of death is listed honestly.</p>
+  <ul class="briefs" style="margin-top:1.5rem">
+    {% for o in stories %}
+    <li>
+      <a href="{{ o.url }}" class="hl hl--sec" style="display:block">{{ o.title }}</a>
+      <span class="brief__meta">{{ o.born|short_date }} &ndash; {{ o.died|short_date }} &middot; {{ o.cause_of_death }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

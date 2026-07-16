@@ -1,0 +1,20 @@
+{% extends "broadsheet.html" %}
+{% block title %}Workshop — {{ SITE.name }}{% endblock %}
+{% block main %}
+<div class="article article--wide">
+  <p class="flag">The workshop</p>
+  <p class="dek" style="max-width:44ch">Everything currently on the bench, and everything that made it off.</p>
+  <div class="cards">
+    {% for p in stories %}
+    <div class="card">
+      {% if p.hero %}
+      <div class="plate card__plate"><img src="{{ p.hero }}" alt=""></div>
+      {% endif %}
+      <h3 class="hl hl--sec"><a href="{{ p.url }}">{{ p.title }}</a></h3>
+      {% if p.dek %}<p class="dek dek--sm">{{ p.dek }}</p>{% endif %}
+      <p class="brief__meta">{{ p.status }} &middot; {{ p.date|short_date }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

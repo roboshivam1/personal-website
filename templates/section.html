@@ -1,0 +1,17 @@
+{% extends "broadsheet.html" %}
+{% block title %}{{ section|replace('-', ' ')|capitalize }} — {{ SITE.name }}{% endblock %}
+{% block main %}
+<div class="article">
+  <p class="flag">{{ section|replace('-', ' ') }}</p>
+  <p class="dek">{{ blurb }}</p>
+  <ul class="briefs" style="margin-top:1.5rem">
+    {% for s in stories %}
+    <li>
+      <a href="{{ s.url }}" class="hl hl--sec" style="display:block">{{ s.title }}</a>
+      {% if s.dek %}<p class="dek" style="font-size:.95rem;margin:.2rem 0 .3rem">{{ s.dek }}</p>{% endif %}
+      <span class="brief__meta">{{ s.date|short_date }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

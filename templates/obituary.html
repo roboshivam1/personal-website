@@ -1,0 +1,11 @@
+{% extends "broadsheet.html" %}
+{% block title %}{{ story.title }} — {{ SITE.name }}{% endblock %}
+{% block main %}
+<article class="article">
+  <p class="flag" style="text-align:center;border-bottom:0">Obituary</p>
+  <h2 class="hl hl--lead" style="text-align:center;font-size:clamp(1.9rem,3.4vw,2.6rem)">{{ story.title }}</h2>
+  <p class="obit__dates">{{ story.born|short_date }} &ndash; {{ story.died|short_date }}</p>
+  <p class="obit__cause">Cause of death: {{ story.cause_of_death }}</p>
+  <div class="article__body">{{ story.body|markdown }}</div>
+</article>
+{% endblock %}

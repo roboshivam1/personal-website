@@ -1,0 +1,21 @@
+{% extends "broadsheet.html" %}
+{% block title %}{{ story.title }} — {{ SITE.name }}{% endblock %}
+{% block main %}
+<article class="article">
+  <p class="flag">{{ story.section|replace('-', ' ') }}</p>
+  <h2 class="hl hl--lead" style="font-size:clamp(1.9rem,3.6vw,2.8rem)">{{ story.title }}</h2>
+  {% if story.dek %}<p class="dek">{{ story.dek }}</p>{% endif %}
+  <p class="byline">By {{ SITE.author }} &middot; {{ story.date|short_date }}</p>
+  <hr class="rule rule--hair" style="margin-bottom:1.4rem">
+  {% if story.hero %}
+  <div class="plate" style="aspect-ratio:3/2;margin-bottom:1.4rem"><img src="{{ story.hero }}" alt=""></div>
+  {% endif %}
+  {% block dateline %}{% endblock %}
+  <div class="article__body">{{ story.body|markdown }}</div>
+  {% if story.tags %}
+  <p class="byline" style="margin-top:2.5rem;border-top:1px solid var(--rule);padding-top:.8rem">
+    Filed under: {{ story.tags|join(' · ') }}
+  </p>
+  {% endif %}
+</article>
+{% endblock %}
