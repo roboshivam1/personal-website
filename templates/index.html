@@ -1,14 +1,14 @@
 {% extends "broadsheet.html" %}
 {% block main %}
 <div class="front">
-  <div>
+  <div class="front__main">
     <p class="flag">Lead story &middot; {{ lead.section|replace('-', ' ') }}</p>
     <h2 class="hl hl--lead"><a href="{{ lead.url }}">{{ lead.title }}</a></h2>
     {% if lead.dek %}<p class="dek">{{ lead.dek }}</p>{% endif %}
     <p class="byline">By {{ SITE.author }} &middot; {{ lead.date|short_date }}</p>
     {% if lead.hero %}
     <figure class="figure">
-      <div class="plate" style="aspect-ratio:16/9"><img src="{{ lead.hero }}" alt=""></div>
+      <div class="plate" style="aspect-ratio:16/9"><img src="{{ lead.hero }}" alt="" style="object-position:{{ lead.hero_focus }}"></div>
       {% if lead.hero_caption %}<figcaption class="plate__caption">{{ lead.hero_caption }}</figcaption>{% endif %}
     </figure>
     {% endif %}
@@ -28,6 +28,20 @@
       {% endfor %}
     </div>
   </div>
+
+  <aside class="front__one">
+    {% if one %}
+    <p class="flag">Column one</p>
+    <h3 class="hl hl--one"><a href="{{ one.url }}">{{ one.title }}</a></h3>
+    {% if one.dek %}<p class="dek dek--sm">{{ one.dek }}</p>{% endif %}
+    <p class="byline">{{ one.date|short_date }}</p>
+    <div class="teaser">{{ one.body|markdown|dateline(one.dateline or SITE.city) }}</div>
+    <p style="margin:.4rem 0 0"><a class="jump" href="{{ one.url }}">Continued inside &rarr;</a></p>
+    {% endif %}
+
+    {# The cartoon goes here, then the puzzle. Both are fixed furniture —
+       this column is one feature and a lot of air until they exist. #}
+  </aside>
 
   <aside class="front__aside">
     <div class="index-box">

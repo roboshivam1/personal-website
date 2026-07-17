@@ -15,10 +15,12 @@ class Story(BaseModel):
     weight: int = 10
     hero: str | None = None
     hero_caption: str | None = None
+    hero_focus: str = "50% 50%"
     dateline: str | None = None      # None -> the paper's own city
     correction: str | None = None
     tags: list[str] = Field(default_factory=list)
     draft: bool = False
+    column_one: bool = False
 
     # Filled in by the loader, not by frontmatter.
     slug: str = ""

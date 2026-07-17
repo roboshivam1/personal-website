@@ -5,7 +5,9 @@ date: 2026-07-12
 section: software
 weight: 100
 tags: [jarvis, agents, macos]
-hero: /img/shivamkapoorpfp.png
+hero: /img/shivamkapoorpfp_dotted.png
+hero_focus: "50% 50%"
+hero_caption: JARVIS in the terminal
 ---
 
 The first version was one loop and a lot of hope. Ask it something, it thinks,

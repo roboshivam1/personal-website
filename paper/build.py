@@ -5,7 +5,6 @@ import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
-from .images import process_all as screen_images
 from .config import DIST, SECTION_BLURB, STATIC
 from .issue import issue_number
 from .loader import load_all
@@ -37,17 +36,34 @@ def build(include_drafts: bool = False) -> int:
     pages = 0
 
     # --- front page: a function of weight, not a hand-maintained file ---
+    # --- the front page is a series of slots, each taking from what is left ---
     lead, *rest = stories
+
+    # Column One: the left-hand feature. Marked by hand, or failing that the
+    # heaviest opinion/notes piece — it is deliberately not the news.
+    one = next((s for s in rest if s.column_one), None)
+    if one is None:
+        one = next((s for s in rest if s.section in ("op-ed", "lab-notes")), None)
+
+    bench = sorted(projects, key=lambda p: -p.date.toordinal())[:4]
+
+    # Every slot claims its stories, and later slots cannot re-use them. A page
+    # that prints the same item in two places has an editor who is not reading it.
+    taken = {lead.url} | {b.url for b in bench} | ({one.url} if one else set())
+    seconds = [s for s in rest if s.url not in taken][:3]
+    taken |= {s.url for s in seconds}
+    briefs = [s for s in rest if s.url not in taken][:5]
 
     # "INSIDE TODAY" — one line per desk, with how much is in it.
     index = Counter(s.section for s in stories)
 
     write("/", env.get_template("index.html").render(
-        path="/", lead=lead, seconds=rest[:4], briefs=rest[4:9],
-        bench=sorted(projects, key=lambda p: -p.date.toordinal())[:4],
+        path="/", lead=lead, one=one, seconds=seconds, briefs=briefs,
+        bench=bench,
         index=sorted(index.items()),
         corrections=[s for s in stories if s.correction][:2],
     ))
+    pages += 1
 
     # --- one page per story ---
     for s in stories:
@@ -99,19 +115,14 @@ def build(include_drafts: bool = False) -> int:
     )
     (DIST / "rss.xml").write_text(feed, encoding="utf-8")
 
-    # --- static assets, copied verbatim (img/ is handled separately) ---
+    # --- static assets, copied verbatim. photographs included: they arrive
+    #     already screened by tools/screen.py, so the build never touches them.
     for asset in STATIC.iterdir():
-        if asset.name == "img":
-            continue
         dest = DIST / asset.name
         shutil.copytree(asset, dest) if asset.is_dir() else shutil.copy2(asset, dest)
 
-    # --- photographs, through the press ---
-    screened = screen_images()
-    if screened:
-        print(f"Screened {screened} photographs")
-
     return pages
+
 
 def main() -> None:
     drafts = "--drafts" in sys.argv

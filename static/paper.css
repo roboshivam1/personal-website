@@ -9,6 +9,8 @@
 :root {
   --paper:      #e3dfd4;
   --paper-deep: #d8d3c5;
+  --plate-paper: #e5e1d7;   /* photographs are prints. prints are on paper,
+                              whatever colour the page behind them is. */
   --ink:        #17171b;
   --ink-soft:   #56564f;
   --ink-faint:  #8b8a80;
@@ -60,7 +62,7 @@ body {
 }
 
 .sheet {
-  max-width: 74rem;
+  max-width: 92rem;
   margin: 0 auto;
   padding: 0 var(--gutter) 5rem;
 }
@@ -71,7 +73,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: 9999;
+  z-index: 1;          /* above the text, below the plates. see .plate */
   pointer-events: none;
   opacity: .38;
   mix-blend-mode: multiply;
@@ -213,19 +215,57 @@ body::before {
 .figure { margin: 0 0 1rem; }
 
 /* ---------- front page grid ---------- */
+/* Three zones, deliberately unequal: the left feature column is thinner than
+   the right rail, which pushes the main column left of centre — where the eye
+   lands anyway. Equal rails read as a template.
+   DOM order is main, one, rail: the lead story is first for a screen reader
+   and for a phone, and grid-template-areas puts Column One back on the left. */
 .front {
   display: grid;
-  grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 2.6fr) minmax(0, 1.15fr);
+  grid-template-areas: "one main rail";
   gap: 0 var(--gutter);
   padding-top: 1.4rem;
 }
+.front__main { grid-area: main; }
+
+.front__one {
+  grid-area: one;
+  border-right: 1px solid var(--rule);
+  padding-right: var(--gutter);
+}
 .front__aside {
+  grid-area: rail;
   border-left: 1px solid var(--rule);
   padding-left: var(--gutter);
 }
+
+/* Two zones: the rail is navigation and stays. Column One drops below the
+   fold and goes wide, set in two columns like a real feature spread. */
+@media (max-width: 1200px) {
+  .front {
+    grid-template-columns: minmax(0, 2.4fr) minmax(0, 1.2fr);
+    grid-template-areas:
+      "main rail"
+      "one  one";
+  }
+  .front__one {
+    border-right: 0;
+    padding-right: 0;
+    border-top: 3px double var(--ink);
+    margin-top: 2rem;
+    padding-top: 1rem;
+  }
+  .front__one .teaser { columns: 2; column-gap: var(--gutter); column-rule: 1px solid var(--rule); }
+}
+
 @media (max-width: 850px) {
-  .front { grid-template-columns: 1fr; }
-  .front__aside { border-left: 0; padding-left: 0; border-top: 3px double var(--ink); margin-top: 2rem; padding-top: 1rem; }
+  .front { grid-template-columns: 1fr; grid-template-areas: "main" "one" "rail"; }
+  .front__one .teaser { columns: 1; }
+  .front__aside {
+    border-left: 0; padding-left: 0;
+    border-top: 3px double var(--ink); margin-top: 2rem; padding-top: 1rem;
+  }
 }
 
 /* ---------- headlines ---------- */
@@ -245,6 +285,7 @@ body::before {
 .hl a:hover, a.hl:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .hl--lead { font-size: clamp(2rem, 4.6vw, 3.4rem); }
 .hl--sec  { font-size: clamp(1.4rem, 2.4vw, 1.9rem); }
+.hl--one { font-size: 1.25rem; font-variation-settings: "wdth" 78, "wght" 800; text-transform: uppercase; }
 .hl--brief { font-size: 1.05rem; font-variation-settings: "wdth" 85, "wght" 600; line-height: 1.25; }
 
 .dek {
@@ -277,20 +318,18 @@ body::before {
 .jump:hover { text-decoration: underline; }
 
 /* ---------- plate (photo) ---------- */
-/* the halftone is baked into the file by paper/images.py at build time, and the
-   page grain sits over everything already. so this is just a frame. */
-.plate { position: relative; overflow: hidden; background: var(--paper-deep); }
-.plate img {
-  display: block; width: 100%; height: 100%; object-fit: cover;
-  /* black dots on white paper: multiply drops the white, prints the dots */
-  mix-blend-mode: multiply;
+/* Photographs arrive already screened by tools/screen.py, with the paper colour
+   baked into the file. So: no blending, no filters, nothing themed. The one
+   trick left is z-index — a print laid on the page does not get the page's
+   grain over it, and body::before sits at z-index 1. */
+.plate {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  background: var(--plate-paper);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .14);
 }
-/* At night the ink is light, so the plate is a negative: invert turns the dots
-   white, and screen is multiply's mirror — it drops the black instead. */
-:root[data-theme="dark"] .plate img {
-  filter: invert(1) sepia(.42) brightness(.92);
-  mix-blend-mode: screen;
-}
+.plate img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .plate__caption {
   font-family: var(--util); font-size: .72rem; color: var(--ink-faint);
   padding-top: .35rem; line-height: 1.35;
