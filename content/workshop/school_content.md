@@ -6,7 +6,7 @@ status: shipped
 stack: [Python, LLM agents, Jinja2]
 weight: 30
 tags: [Jinja2, LLM, Python]
-hero: /img/school_content_dotted.jpg
+hero: /img/school_content_dotted.png
 hero_focus: "50% 50%"
 hero_caption: A part of a carousel output
 links:

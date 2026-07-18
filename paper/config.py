@@ -12,7 +12,7 @@ SITE = {
     "motto": "software · hardware · things half-built",
     "city": "Jaipur",
     "established": 2026,
-    "url": "https://shivam.example",
+    "url": "https://shvmkpr.in",
     "author": "Shivam",
     "description": (
         "The personal paper of Shivam — developer, maker, and tech consultant in "

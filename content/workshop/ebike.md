@@ -6,14 +6,14 @@ status: in progress
 stack: [CAD, 3D printing, fabrication]
 weight: 20
 tags: [hardware, 3D printing]
-hero: /img/final_rover_dotted.jpg
+hero: /img/ebike_frame_dotted.jpg
 hero_focus: "50% 50%"
-hero_caption: ACE - Air Cleansing Entity
+hero_caption: The almighty frame.
 ---
 
 *the resurrection*
 
-For a few weeks this spring my weekends had a theme: wander through the automobile scrap markets of Jaipur and stare at dead motorcycles. If you have never done this, I recommend it. It is very peaceful and everyone thinks you are up to something.
+For a few weeks this summer my weekends had a theme: wander through the automobile scrap markets of Jaipur and stare at dead motorcycles. If you have never done this, I recommend it. It is very peaceful and everyone thinks you are up to something.
 
 Eventually I found my guy. Every scrap market has one — the person who doesn't blink when you explain something ridiculous. He rolled out a dead Bajaj Pulsar NS200, and I told him exactly what I wanted: not the bike, just the frame, cut and kept the way I needed it. A few days later I came back and it was waiting for me, stripped down to the bones.
 
