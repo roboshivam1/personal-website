@@ -1,0 +1,79 @@
+{% extends "broadsheet.html" %}
+{% block title %}Motoring — {{ SITE.name }}{% endblock %}
+{% block main %}
+<div class="article article--wide">
+  <p class="flag">Motoring</p>
+  <h2 class="hl hl--sec">Every car this paper owns</h2>
+  <p class="dek" style="max-width:52ch">At 1:64 scale, reviewed by a correspondent with no
+  licence and no test track.</p>
+
+  <div class="motoring">
+    <div class="cars">
+      {% for c in cars %}
+      <button class="car" type="button" data-lot="{{ loop.index }}">
+        <div class="plate car__plate">
+          <img src="{{ c.image }}" alt="" loading="lazy" decoding="async">
+        </div>
+        <span class="car__name">{{ c.name }}</span>
+        <span class="car__meta">{{ c.issued }}</span>
+      </button>
+      {% endfor %}
+    </div>
+
+    <aside class="motoring__rail">
+      <div class="tally">
+        <div class="tally__n">{{ cars|length }}</div>
+        <div class="tally__label">cars in the collection</div>
+      </div>
+
+      <p class="flag">Arrivals</p>
+      <table class="arrivals">
+        {% for year, n, pct in arrivals %}
+        <tr>
+          <th scope="row">{{ year }}</th>
+          <td>
+            <span class="arrivals__bar" style="width:{{ pct }}%"></span><span class="arrivals__n">{{ n }}</span>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+
+      <div class="classified" style="margin-top:1.6rem">
+        <p class="flag" style="color:var(--ink);border-color:var(--rule)">For sale</p>
+        <p><strong>ABSOLUTELY NOTHING.</strong> Every Hot Wheels stays. Enquiries will be
+        read, appreciated, and declined.</p>
+      </div>
+    </aside>
+  </div>
+</div>
+
+{% for c in cars %}
+<dialog class="lot" id="lot-{{ loop.index }}">
+  <form method="dialog"><button class="lot__close" aria-label="Close">&times;</button></form>
+  <p class="flag">Lot {{ '%02d'|format(loop.index) }}</p>
+  <h3 class="hl hl--sec">{{ c.name }}</h3>
+  <div class="plate lot__plate"><img src="{{ c.image }}" alt="" loading="lazy"></div>
+  <table class="lot__data">
+    <tr><th scope="row">Issued</th><td>{{ c.issued }}</td></tr>
+    <tr><th scope="row">Acquired</th><td>{{ c.acquired|month_year }}</td></tr>
+    <tr><th scope="row">Scale</th><td>{{ c.scale }}</td></tr>
+    {% if c.series %}<tr><th scope="row">Series</th><td>{{ c.series }}</td></tr>{% endif %}
+  </table>
+  {% if c.description %}<p class="lot__note">{{ c.description }}</p>{% endif %}
+</dialog>
+{% endfor %}
+
+<script>
+  /* Native <dialog>: Escape to close, focus handled by the browser, no library. */
+  document.querySelectorAll("[data-lot]").forEach(function (tile) {
+    tile.addEventListener("click", function () {
+      document.getElementById("lot-" + tile.dataset.lot).showModal();
+    });
+  });
+  document.querySelectorAll("dialog.lot").forEach(function (d) {
+    d.addEventListener("click", function (e) {
+      if (e.target === d) d.close();      /* click the backdrop to dismiss */
+    });
+  });
+</script>
+{% endblock %}

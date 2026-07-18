@@ -1,0 +1,10 @@
+{# The hero image for any post. One definition, so article / project / obituary
+   can never drift. Takes the story; renders nothing if it has no hero. #}
+{% macro hero(story) %}
+{% if story.hero %}
+<figure class="figure">
+  <div class="plate" style="aspect-ratio:3/2"><img src="{{ story.hero }}" alt="" style="object-position:{{ story.hero_focus }}"></div>
+  {% if story.hero_caption %}<figcaption class="plate__caption">{{ story.hero_caption }}</figcaption>{% endif %}
+</figure>
+{% endif %}
+{% endmacro %}

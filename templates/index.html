@@ -1,5 +1,21 @@
 {% extends "broadsheet.html" %}
+{% import "_puzzle.html" as xw %}
 {% block main %}
+{% if ticker %}
+<table class="markets">
+  <caption class="markets__caption">Markets &middot; commits this session against the last</caption>
+  <tr>
+    {% for q in ticker %}
+    <td class="markets__q markets__q--{{ q.direction }}">
+      <span class="markets__sym">{{ q.symbol }}</span>
+      <span class="markets__last">{{ q.last }}</span>
+      <span class="markets__chg">{{ q.arrow }}&thinsp;{{ q.chg if q.chg else '&mdash;'|safe }}</span>
+    </td>
+    {% endfor %}
+  </tr>
+</table>
+{% endif %}
+
 <div class="front">
   <div class="front__main">
     <p class="flag">Lead story &middot; {{ lead.section|replace('-', ' ') }}</p>
@@ -17,8 +33,65 @@
 
     <hr class="rule rule--thick" style="margin:2rem 0 1.2rem">
 
+    {% if car %}
+    <div class="fold">
+      <div class="fold__motoring">
+        <p class="flag">Motoring &middot; car of the issue</p>
+        <div class="carbox">
+          <div class="plate carbox__plate"><img src="{{ car.image }}" alt=""></div>
+          <div>
+            <h3 class="hl hl--sec">{{ car.name }}</h3>
+            <table class="lot__data">
+              <tr><th scope="row">Issued</th><td>{{ car.issued }}</td></tr>
+              <tr><th scope="row">Acquired</th><td>{{ car.acquired|month_year }}</td></tr>
+              <tr><th scope="row">Scale</th><td>{{ car.scale }}</td></tr>
+              {% if car.series %}<tr><th scope="row">Series</th><td>{{ car.series }}</td></tr>{% endif %}
+            </table>
+            {% if car.description %}<p class="dek dek--sm">{{ car.description }}</p>{% endif %}
+            <p style="margin:.4rem 0 0"><a class="jump" href="/motoring/">View the complete collection &rarr;</a></p>
+          </div>
+        </div>
+      </div>
+
+      {% if seconds %}
+      <div class="fold__note">
+        <p class="flag">{{ seconds[0].section|replace('-', ' ') }}</p>
+        <h3 class="hl hl--one"><a href="{{ seconds[0].url }}">{{ seconds[0].title }}</a></h3>
+        {% if seconds[0].dek %}<p class="dek dek--sm">{{ seconds[0].dek }}</p>{% endif %}
+        <p class="byline">{{ seconds[0].date|short_date }}</p>
+      </div>
+      {% endif %}
+    </div>
+
+    <hr class="rule rule--hair" style="margin:1.4rem 0 1.2rem">
+    {% endif %}
+
+    {% if photo %}
+    {# flipped: the car box sat left, so the picture sits right and the two
+       heavy blocks make a cross down the page instead of a column #}
+    <div class="fold fold--flip">
+      {% if seconds|length > 1 %}
+      <div class="fold__note">
+        <p class="flag">{{ seconds[1].section|replace('-', ' ') }}</p>
+        <h3 class="hl hl--one"><a href="{{ seconds[1].url }}">{{ seconds[1].title }}</a></h3>
+        {% if seconds[1].dek %}<p class="dek dek--sm">{{ seconds[1].dek }}</p>{% endif %}
+        <p class="byline">{{ seconds[1].date|short_date }}</p>
+      </div>
+      {% endif %}
+
+      <figure class="fold__picture">
+        <p class="flag">Pictures</p>
+        <div class="plate" style="aspect-ratio:3/2"><img src="{{ photo.image }}" alt="" loading="lazy"></div>
+        <figcaption class="plate__caption">{{ photo.caption }}</figcaption>
+        <p style="margin:.4rem 0 0"><a class="jump" href="/photography/">More frames &rarr;</a></p>
+      </figure>
+    </div>
+
+    <hr class="rule rule--hair" style="margin:1.4rem 0 1.2rem">
+    {% endif %}
+
     <div class="seconds">
-      {% for s in seconds %}
+      {% for s in seconds[(1 if car else 0) + (1 if photo else 0):] %}
       <div class="seconds__item">
         <p class="flag">{{ s.section|replace('-', ' ') }}</p>
         <h3 class="hl hl--sec"><a href="{{ s.url }}">{{ s.title }}</a></h3>
@@ -39,8 +112,33 @@
     <p style="margin:.4rem 0 0"><a class="jump" href="{{ one.url }}">Continued inside &rarr;</a></p>
     {% endif %}
 
-    {# The cartoon goes here, then the puzzle. Both are fixed furniture —
-       this column is one feature and a lot of air until they exist. #}
+    {% if puzzle %}
+    <div class="puzzle">
+      <p class="flag">Crossword no. {{ '%02d'|format(puzzle.number) }}</p>
+      <button class="puzzle__btn" type="button" data-puzzle
+              aria-label="Enlarge crossword no. {{ puzzle.number }}">
+        {{ xw.grid(puzzle) }}
+      </button>
+      {{ xw.clues(puzzle, compact=True) }}
+      <p style="margin:.5rem 0 0"><a class="jump" href="#" data-puzzle>Enlarge &amp; solve &rarr;</a></p>
+    </div>
+    {% endif %}
+
+    {% if cartoon %}
+    <figure class="cartoon">
+      <p class="flag">The cartoon</p>
+      {% if cartoon.image %}
+      <div class="plate cartoon__plate"><img src="{{ cartoon.image }}" alt="" loading="lazy"></div>
+      {% else %}
+      <div class="cartoon__missing">
+        <p>The cartoonist has not filed.</p>
+        <p class="cartoon__missing-sub">This space is held for a drawing that does not exist yet.
+        The editor declines to fill it with anything he did not draw.</p>
+      </div>
+      {% endif %}
+      <figcaption class="plate__caption">{{ cartoon.caption }}</figcaption>
+    </figure>
+    {% endif %}
   </aside>
 
   <aside class="front__aside">
@@ -54,6 +152,17 @@
       </a>
       {% endfor %}
     </div>
+
+    {% if pick %}
+    <div class="recommends">
+      <p class="flag">The critic recommends</p>
+      <p class="recommends__desk">{{ pick_desks[pick.kind] }}</p>
+      <p class="recommends__title">{{ pick.title }}</p>
+      <p class="recommends__by">{{ pick.by }}{% if pick.year %} &middot; {{ pick.year }}{% endif %}</p>
+      {% if pick.note %}<p class="recommends__note">{{ pick.note }}</p>{% endif %}
+      <p style="margin:.5rem 0 0"><a class="jump" href="/culture/">More of the editor's picks &rarr;</a></p>
+    </div>
+    {% endif %}
 
     <p class="flag" style="margin-top:1.6rem">On the bench</p>
     <ul class="briefs">
@@ -92,4 +201,26 @@
     </div>
   </aside>
 </div>
+
+{% if puzzle %}
+<dialog class="lot lot--puzzle" id="puzzle-dialog">
+  <form method="dialog"><button class="lot__close" aria-label="Close">&times;</button></form>
+  <p class="flag">Crossword no. {{ '%02d'|format(puzzle.number) }}</p>
+  <div class="puzzle-big">
+    {{ xw.grid(puzzle) }}
+    <div>
+      {{ xw.clues(puzzle) }}
+      {{ xw.solution(puzzle) }}
+    </div>
+  </div>
+</dialog>
+
+<script>
+  var dlg = document.getElementById("puzzle-dialog");
+  document.querySelectorAll("[data-puzzle]").forEach(function (el) {
+    el.addEventListener("click", function (e) { e.preventDefault(); dlg.showModal(); });
+  });
+  dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+</script>
+{% endif %}
 {% endblock %}

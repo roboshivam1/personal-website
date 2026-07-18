@@ -1,23 +1,213 @@
 {% extends "broadsheet.html" %}
 {% block title %}About — {{ SITE.name }}{% endblock %}
 {% block main %}
-<div class="article">
+{#
+  HOW THE PICTURES WORK
+  Each margin picture is a <span class="side side--left|right"> placed at the END
+  of the paragraph it should sit beside. That paragraph is marked .has-figure.
+  CSS pulls the .side out into the gutter, anchored to the top of its paragraph.
+  To move a picture: cut the <span> and paste it into a different paragraph, and
+  flip left/right. No numbers to tune. Left and right just need to roughly
+  alternate down the page so two never collide.
+#}
+<div class="article article--about">
   <p class="flag">The staff box</p>
-  <h2 class="hl hl--sec">Shivam &mdash; editor, reporter, typesetter, and entire circulation department</h2>
+  <h2 class="hl hl--sec">Shivam Kapoor &mdash; editor, reporter, typesetter, and entire circulation department</h2>
+  <p class="standfirst">A life in parts, mostly unfinished, occasionally working.</p>
+
   <div class="article__body">
-    <p>I build things in Jaipur. Some of them are software: multi-agent systems, web apps,
-    internal tooling for people who did not know they needed internal tooling. Some of them
-    are physical: an ebike on its third frame, a wall-mounted air purifier that now has a
-    patent application number attached to it. The overlap between those two lists is the
-    whole reason this site exists in this shape.</p>
+<p class="has-figure">I'm Shivam Kapoor. I live in Jaipur, I study computer science engineering at LNMIIT,
+    and I build things. 
+      <span class="side side--right">
+        <span class="mugshot"><img src="/img/about/shivamkapoorpfp_dotted.png" alt="Shivam Kapoor"></span>
+        <span class="plate__caption">The editor.</span>
+      </span>
+    </p>
 
-    <h3>Available for</h3>
-    <p>AI systems that have to survive contact with real users. Internal tools.
-    Hardware-adjacent software. Second opinions on architecture before you commit to it.</p>
+    <p class="has-figure">That's the short version, and it's accurate, but it's also the kind of sentence that
+    could belong to about four thousand people. So here's the long version &mdash; the one with
+    the lime green website and the robot that cleaned air and the YouTube channel nobody
+    watched. Fair warning: I've been at this a while, and I intend to mention almost all of it.
+      <span class="side side--left editor-box">
+        <span class="flag editor-box__head">Write to the editor</span>
+        <span class="editor-box__line">Email: <a href="mailto:roboshivam25@gmail.com">you@example.com</a></span>
+        <span class="editor-box__line">Elsewhere: <a href="https://github.com/roboshivam1">GitHub,</a><a href="https://www.instagram.com/shivamkapoorthisside"> Instagram,</a><a href="https://www.linkedin.com/in/shivam-kapoor-abc"> LinkedIn</a></span>
+        <span class="editor-box__line">Available for AI systems that have to survive contact with real
+        users, internal tools, hardware-adjacent software, and second opinions on architecture
+        before you commit to it.</span>
+      </span>
+    </p>
 
-    <h3>Write to the editor</h3>
-    <p>Email: <a href="mailto:you@example.com">you@example.com</a><br>
-    Elsewhere: <a href="https://github.com/">GitHub</a></p>
+    <h3>Before the electricity</h3>
+    <p class="has-figure">I don't remember deciding to become someone who makes things. As far as I can tell, I
+    arrived that way.
+      <span class="side side--right">
+        <span class="plate"><img src="/img/about/shivamkapoorpfp_dotted.png" alt="" loading="lazy"></span>
+        <span class="plate__caption">The pre-industrial period.</span>
+      </span>
+    </p>
+
+    <p>Toddler-me did art, crafts, models &mdash; anything that let me turn a pile of stuff into a
+    slightly different pile of stuff with a name. Evenings were Lego with the neighbourhood
+    crew. Weekends were board games, until board games stopped being enough and I started
+    making my own versions of them: rewritten rules, hand-drawn boards, houses that were
+    definitely not up to code. At some point I informed my family that I would be founding a
+    board game company when I grew up.</p>
+
+    <p>I did not found a board game company. But I want it on record that the ambition was
+    there early, and that I still think about it more than is reasonable.</p>
+
+    <h3>The robot kit</h3>
+    <p class="dek">Fifth grade. The fault line.</p>
+    <p class="has-figure">My parents bought me a robot-building kit, and everything after this paragraph is
+    downstream of it.
+      <span class="side side--left">
+        <span class="plate"><img src="/img/about/robosoccer_dotted.jpg" alt="" loading="lazy"></span>
+        <span class="plate__caption">One of my first bots. This one played soccer.</span>
+      </span>
+    </p>
+
+    <p>The first robots were remote-controlled &mdash; I'd build them, drive them around, and then,
+    because a working robot was apparently not enough, I'd sit down and draw new ones. Pages
+    of robot designs, by hand, some of them genuinely impeccable. Nobody had told me CAD
+    existed. I was doing mechanical design with a pencil and total confidence.</p>
+
+    <p>The problem showed up fast. Everything I built had to be <em>driven</em>. I wanted them to
+    think. And you can't solder your way to autonomy.</p>
+
+    <h3>HTML betrayed me</h3>
+    <p class="dek">Age ten.</p>
+    <p class="has-figure">So I went looking for programming, and the first thing I found was HTML.
+      <span class="side side--right">
+        <span class="plate"><img src="/img/about/old_webpage_dotted.png" alt="" loading="lazy"></span>
+        <span class="plate__caption">Version one of this paper. The art direction has changed.</span>
+      </span>
+    </p>
+
+    <p>I built a one-page website about myself &mdash; my hobbies, my interests, a giant cartoon
+    robot, set against a solid lime green background that I maintain was a bold choice. It
+    was, in every way that counts, the first version of the page you are currently reading.
+    Twelve years of iteration and I'm still writing an about page with a robot on it.</p>
+
+    <p>Then I learned you cannot program a robot in HTML. I took this badly.</p>
+
+    <p>Python came next. I got myself into an introductory Python summer camp meant for 11th
+    graders &mdash; a month of it, and I was by a distance the youngest person in the room. I left
+    with the title of "most inquisitive student," which is the politest possible way to
+    describe a ten-year-old who would not stop asking questions.</p>
+
+    <p>That's where it started. Calculators. Number games. And then I found <code>import</code>.</p>
+
+    <p>I want to be dramatic about this, because it <em>was</em> dramatic. One keyword and the
+    language stopped being a box and became a door. Suddenly there were libraries. There were
+    other people's tools, free, right there. I built WhatsApp message spammers and tested them
+    on my friends, who were thrilled. I lived inside YouTube tutorials. I may or may not have skipped a 
+    few online classes to work on those projects(in my defense... they were educational) &mdash; and somewhere in that stretch, I built the first version of JARVIS.</p>
+
+    <p>He's still around. We'll get to him.</p>
+
+    <h3>The gamedev detour</h3>
+    <p class="dek">Age eleven.</p>
+    <p>I was already deep into online games, so of course I wanted to make them.</p>
+
+    <p>Roblox took me in. I learned Lua, got my first exposure to 3D modelling, and &mdash; maybe
+    more importantly &mdash; found out what it feels like to be part of an online developer
+    community, where nobody knows or cares how old you are as long as the thing works. I made
+    games. My friends played them. I earned a genuinely respectable amount of Robux and spent
+    every last one of it on clothes and accessories, which I regret not at all.</p>
+
+    <p>There was a Unity phase. A brief Android app development phase. Both taught me something
+    and neither stuck. Python remained the great love. Robotics kept running in the background,
+    the way it always has.</p>
+
+    <h3>The channel</h3>
+    <p class="dek">Age twelve. Circulation: negligible.</p>
+    <p class="has-figure">I started a YouTube channel to show off the robots I was building.
+      <span class="side side--left">
+        <span class="plate"><img src="/img/about/yt_still_dotted.jpg" alt="" loading="lazy"></span>
+        <span class="plate__caption">Selected without mercy from the archive.</span>
+      </span>
+    </p>
+
+    <p>The scripts were unhinged. Insanely fun to write, frequently cringe, never once normal
+    &mdash; I have always been this specific kind of storyteller and I have made my peace with it.
+    Between robot builds I posted piano covers of the most absurd songs I liked, occasional
+    Hot Wheels reviews, and poetry I'd written myself, because the writing thing was always
+    there too.</p>
+
+    <p>The channel failed. Completely. I had the time of my life.</p>
+
+    <h3>ACE</h3>
+    <p class="dek">Age fourteen. IIT Madras. Runners-up.</p>
+    <p class="has-figure">Four of us went to IIT Madras for a team competition, and we spent about a month
+    building ACE &mdash; an air purifier rover.
+      <span class="side side--right">
+        <span class="plate"><img src="/img/about/final_rover_dotted.jpg" alt="" loading="lazy"></span>
+        <span class="plate__caption">ACE</span>
+      </span>
+    </p>
+
+    <p>This was the first time a project made me <em>study</em>. Air pollution, air purification,
+    the actual chemistry and airflow of the thing, and then the usual robotics, code, tinkering
+    and research to make it move and work at the same time. Every bad assumption we had got
+    found out by a physical object refusing to cooperate.</p>
+
+    <p>We came away runners-up. I came away with the understanding that a good project is mostly
+    research wearing a robot costume.</p>
+
+    <h3>The school years</h3>
+    <p class="dek">Eleventh grade. Things got serious without my noticing.</p>
+    <p class="has-figure">I got into AI systems programming with Python, and &mdash; for the first time &mdash; learned
+    Python properly, academically, in a classroom, after six years of learning it in the wild.
+    Turns out I'd been right about most of it and spectacularly wrong about a few things.
+      <span class="side side--left">
+        <span class="plate"><img src="/img/about/benchy_dotted.jpg" alt="" loading="lazy"></span>
+        <span class="plate__caption">First printer, first benchy</span>
+      </span>
+    </p>
+
+    <p>I became robotics club lead and tech advisor at my school, which meant I stopped just
+    building for myself. I built for the school: a teacher assessment platform, a library
+    management system, a virtual assistant for the STEM lab. I mentored juniors through their
+    robotics projects, exhibitions and competitions &mdash; and watching someone else's thing
+    finally work is a very different pleasure from watching your own thing finally work. Both
+    are good. That one's quieter.</p>
+
+    <p>I also got my hands on a 3D printer for the first time. I was fascinated. I am
+    <em>still</em> fascinated. I don't expect that to wear off &mdash; a machine that turns a file
+    into an object is the closest thing to real magic I've been allowed to own.</p>
+
+    <p>And I founded the Student Gymkhana: a student-led body for the school's activities, clubs
+    and events. Which, if you think about it, is just the board game thing again. Write the
+    rules, draw the board, hand it to people, watch it run.</p>
+
+    <h3>Now</h3>
+    <p class="has-figure">I'm at LNMIIT Jaipur, studying CS engineering.
+      <span class="side side--right">
+        <span class="plate"><img src="" alt="the bench" loading="lazy"></span>
+        <span class="plate__caption">There's always another thing on the bench.</span>
+      </span>
+    </p>
+
+    <p>I build AI systems and agentic pipelines that help actual people, not benchmarks. JARVIS
+    MK2 is running &mdash; the sixth or seventh descendant of that program a ten-year-old wrote
+    while skipping class, and by far the best-behaved of the lineage. I've built autonomous
+    content creation pipelines. I modernise old tech, because throwing things away is boring.
+    And there's an ebike taking shape, currently on its framework, which is my standing excuse
+    to be covered in grease.</p>
+
+    <p>Still programming. Still 3D printing. Still soldering. Most importantly: still learning
+    &mdash; twelve years in, and the best part of this is still the moment something I don't
+    understand becomes something I do.</p>
+
+    <p>The pencil-drawn robots didn't work. Neither did the channel. The board game company
+    never happened. That's fine &mdash; the point was never the shipping. The point is that there's
+    always another thing on the bench.</p>
+
+    <h3>What the editor likes</h3>
+    <p>Films, books, and records this paper will not stop going on about are collected
+    on the <a href="/culture/">arts &amp; leisure page</a>. The critic is the editor, which
+    explains the reviews.</p>
 
     <h3>Corrections policy</h3>
     <p>This paper is wrong regularly. When it is, the piece gets a correction note at the

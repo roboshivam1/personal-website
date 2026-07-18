@@ -1,4 +1,6 @@
 {% extends "broadsheet.html" %}
+{% import "_hero.html" as h %}
+{% import "_links.html" as lk %}
 {% block title %}{{ story.title }} — {{ SITE.name }}{% endblock %}
 {% block main %}
 <article class="article">
@@ -10,14 +12,15 @@
   {% if story.correction %}
   <p class="correction"><strong>Correction:</strong> {{ story.correction }}</p>
   {% endif %}
-  {% if story.hero %}
-  <figure class="figure">
-    <div class="plate" style="aspect-ratio:3/2"><img src="{{ story.hero }}" alt="" style="object-position:{{ story.hero_focus }}"></div>
-    {% if story.hero_caption %}<figcaption class="plate__caption">{{ story.hero_caption }}</figcaption>{% endif %}
-  </figure>
-  {% endif %}
+  {{ h.hero(story) }}
   {% block infobar %}{% endblock %}
   <div class="article__body">{{ story.body|markdown|dateline(story.dateline or SITE.city) }}</div>
+  {{ lk.links(story.links) }}
+  {% if story.about %}
+  <p class="backlink">Filed alongside the workshop project:
+    <a href="/workshop/{{ story.about }}/">/workshop/{{ story.about }}/</a></p>
+  {% endif %}
+  {% block related %}{% endblock %}
   {% if story.tags %}
   <p class="byline" style="margin-top:2.5rem;border-top:1px solid var(--rule);padding-top:.8rem">
     Filed under: {{ story.tags|join(' · ') }}

@@ -8,7 +8,7 @@
     {% for p in stories %}
     <div class="card">
       {% if p.hero %}
-      <div class="plate card__plate"><img src="{{ story.hero }}" alt="" style="object-position:{{ story.hero_focus }}"></div>
+      <div class="plate card__plate"><img src="{{ p.hero }}" alt="" style="object-position:{{ p.hero_focus }}"></div>
       {% endif %}
       <h3 class="hl hl--sec"><a href="{{ p.url }}">{{ p.title }}</a></h3>
       {% if p.dek %}<p class="dek dek--sm">{{ p.dek }}</p>{% endif %}

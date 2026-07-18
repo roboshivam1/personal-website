@@ -1,0 +1,57 @@
+{% extends "broadsheet.html" %}
+{% block title %}Pictures — {{ SITE.name }}{% endblock %}
+{% block main %}
+<div class="article article--wide">
+  <p class="flag">The picture desk</p>
+  <h2 class="hl hl--sec">Frames</h2>
+  <p class="dek" style="max-width:52ch">Photographs by the editor, screened by hand, printed
+  as this paper prints everything: in dots.</p>
+
+  <div class="motoring">
+    <div class="frames">
+      {% for p in photographs %}
+      <figure class="frame{% if loop.first %} frame--lead{% endif %}">
+        <button class="frame__btn" type="button" data-frame="{{ loop.index }}">
+          <div class="plate frame__plate">
+            <img src="{{ p.image }}" alt="" loading="lazy" decoding="async">
+          </div>
+        </button>
+        <figcaption class="plate__caption">{{ p.caption }}</figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+
+    <aside class="motoring__rail">
+      <div class="tally">
+        <div class="tally__n">{{ photographs|length }}</div>
+        <div class="tally__label">frames on file</div>
+      </div>
+
+      <div class="classified">
+        <p class="flag" style="color:var(--ink);border-color:var(--rule)">Picture desk</p>
+        <p>All photographs by the editor, who is also the picture editor, and who has
+        never once been overruled.</p>
+      </div>
+    </aside>
+  </div>
+</div>
+
+{% for p in photographs %}
+<dialog class="lot lot--frame" id="frame-{{ loop.index }}">
+  <form method="dialog"><button class="lot__close" aria-label="Close">&times;</button></form>
+  <div class="plate"><img src="{{ p.image }}" alt="" loading="lazy"></div>
+  <p class="lot__note">{{ p.caption }}</p>
+</dialog>
+{% endfor %}
+
+<script>
+  document.querySelectorAll("[data-frame]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      document.getElementById("frame-" + b.dataset.frame).showModal();
+    });
+  });
+  document.querySelectorAll("dialog.lot").forEach(function (d) {
+    d.addEventListener("click", function (e) { if (e.target === d) d.close(); });
+  });
+</script>
+{% endblock %}

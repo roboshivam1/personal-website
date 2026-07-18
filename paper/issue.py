@@ -21,3 +21,7 @@ def long_date(d: date) -> str:
 
 def short_date(d: date) -> str:
     return f"{d.day} {_MONTHS[d.month - 1][:3]} {d.year}"
+
+
+def month_year(d: date) -> str:
+    return f"{_MONTHS[d.month - 1]} {d.year}"

@@ -1,0 +1,44 @@
+{# The grid. Rendered twice — small in Column One, large in the dialog — so it
+   lives here and both callers set --cell. Cells are placed by coordinate, so
+   the gaps between words are simply cells that do not exist. #}
+{% macro grid(puzzle, blank=True) %}
+<div class="xword" style="--cols:{{ puzzle.cols }};--rows:{{ puzzle.rows }}"
+     role="img" aria-label="Crossword grid, {{ puzzle.cols }} by {{ puzzle.rows }}">
+  {% for c in puzzle.cells %}
+  <div class="xword__cell" style="grid-column:{{ c.x + 1 }};grid-row:{{ c.y + 1 }}">
+    {% if c.n %}<span class="xword__n">{{ c.n }}</span>{% endif %}
+    {% if not blank %}<span class="xword__a">{{ c.a }}</span>{% endif %}
+  </div>
+  {% endfor %}
+</div>
+{% endmacro %}
+
+{% macro clues(puzzle, compact=False) %}
+<div class="clues{% if compact %} clues--compact{% endif %}">
+  {% for label, items in [('Across', puzzle.across), ('Down', puzzle.down)] %}
+  <div>
+    <p class="clues__head">{{ label }}</p>
+    <ol class="clues__list">
+      {% for c in items %}
+      <li><span class="clues__n">{{ c.n }}</span> {{ c.clue }}</li>
+      {% endfor %}
+    </ol>
+  </div>
+  {% endfor %}
+</div>
+{% endmacro %}
+
+{% macro solution(puzzle) %}
+<details class="solution">
+  <summary class="solution__toggle">Solution</summary>
+  {# Printed upside down, as a paper does. Rotating the box means the reader
+     turns their head or their screen, which is exactly the intended friction. #}
+  <div class="solution__body">
+    {% for label, items in [('Across', puzzle.across), ('Down', puzzle.down)] %}
+    <p><strong>{{ label }}:</strong>
+      {% for c in items %}{{ c.n }} {{ c.answer }}{% if not loop.last %} &middot; {% endif %}{% endfor %}
+    </p>
+    {% endfor %}
+  </div>
+</details>
+{% endmacro %}

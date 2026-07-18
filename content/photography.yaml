@@ -1,0 +1,27 @@
+# The picture desk. Order here is the order on the page — the first frame runs
+# large, as the dominant picture, so put your best one first.
+#
+# image    screened by tools/screen.py, dropped in static/img/photos/
+# caption  what it is. captions are the most-read text on a newspaper page
+#          after the headline. do not waste them.
+
+- image: /img/photos/bench-night.png
+  caption: The bench at 2am, three days into the frame rebuild. The soldering iron
+    is on, which at this hour is rarely a good sign.
+
+- image: /img/photos/jaipur-roof.png
+  caption: Rooftops, Jaipur, before the monsoon broke.
+
+- image: /img/photos/terminal.png
+  caption: JARVIS arguing with itself, photographed through a screen, which is
+    the only way this paper can photograph it.
+
+- image: /img/photos/frame-weld.png
+  caption: The third frame, mid-weld. The second frame is not pictured and will
+    not be discussed.
+
+- image: /img/photos/cars-shelf.png
+  caption: A fraction of the collection, waiting to be catalogued.
+
+- image: /img/photos/monsoon.png
+  caption: The first rain of the year, from the same roof, four hours later.

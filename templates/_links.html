@@ -1,0 +1,9 @@
+{# External links, rendered as a small labelled row. Used on article, project,
+   and obituary pages. A link is {label, url}. #}
+{% macro links(items) %}
+{% if items %}
+<p class="links">
+  {% for l in items %}<a class="links__a" href="{{ l.url }}">{{ l.label }} &nearr;</a>{% if not loop.last %} <span class="links__sep">&middot;</span> {% endif %}{% endfor %}
+</p>
+{% endif %}
+{% endmacro %}

@@ -1,0 +1,29 @@
+{
+  "fetched": 17755560,
+  "quotes": [
+    {
+      "symbol": "JRVS",
+      "repo": "pallets/jinja",
+      "last": 0,
+      "chg": 0
+    },
+    {
+      "symbol": "EBIK",
+      "repo": "python-pillow/Pillow",
+      "last": 35,
+      "chg": -65
+    },
+    {
+      "symbol": "VDYT",
+      "repo": "pydantic/pydantic",
+      "last": 28,
+      "chg": 2
+    },
+    {
+      "symbol": "SQON",
+      "repo": "python-markdown/markdown",
+      "last": 1,
+      "chg": -1
+    }
+  ]
+}

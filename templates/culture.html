@@ -1,0 +1,46 @@
+{% extends "broadsheet.html" %}
+{% block title %}Arts &amp; Leisure — {{ SITE.name }}{% endblock %}
+{% block main %}
+<div class="article article--wide">
+  <p class="flag">Arts &amp; leisure</p>
+
+  {# the lead review: one thing, big, so the page has a top #}
+  <div class="culture-lead">
+    <div>
+      <p class="flag">Critic's choice &middot; {{ pick_desks[review.kind] }}</p>
+      <h2 class="hl hl--lead" style="font-size:clamp(1.8rem,3.2vw,2.6rem)">{{ review.title }}</h2>
+      <p class="dek">{{ review.by }}{% if review.year %} &middot; {{ review.year }}{% endif %}</p>
+      <p class="stars">{{ '★' * review.stars }}{{ '☆' * (5 - review.stars) }}</p>
+      {% if review.note %}<p class="culture-lead__note">{{ review.note }}</p>{% endif %}
+    </div>
+
+    <div class="culture-lead__box">
+      <p class="flag" style="color:var(--ink);border-color:var(--rule)">The critic</p>
+      <p>This paper's critic has never given an unfavourable notice, having reviewed
+      only things he already liked. The editor considers this a feature of the
+      arrangement and has declined to intervene.</p>
+      <p>Recommendations are unpaid, unsolicited, and final. Correspondence disputing
+      them will be filed under <a href="/obituaries/">Obituaries</a>.</p>
+    </div>
+  </div>
+
+  <hr class="rule rule--thick" style="margin:1.6rem 0 0">
+
+  {# and the listings: three desks, dense, like a cinema page #}
+  <div class="listings">
+    {% for kind, label, items in desks %}
+    <section class="listings__desk">
+      <p class="flag">{{ label }}</p>
+      {% for p in items %}
+      <article class="listing">
+        <p class="listing__stars">{{ '★' * p.stars }}{{ '☆' * (5 - p.stars) }}</p>
+        <h3 class="listing__title">{{ p.title }}</h3>
+        <p class="listing__by">{{ p.by }}{% if p.year %} &middot; {{ p.year }}{% endif %}</p>
+        {% if p.note %}<p class="listing__note">{{ p.note }}</p>{% endif %}
+      </article>
+      {% endfor %}
+    </section>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

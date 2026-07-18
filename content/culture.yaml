@@ -1,0 +1,70 @@
+# The critic. Placeholder picks — replace with yours.
+#
+# kind   film | book | record   (decides which desk it prints under)
+# title  what it is
+# by     director / author / artist
+# year   optional
+# note   the verdict. one line. deadpan. this is the whole section.
+# star   optional, true for the standing recommendation
+
+- kind: film
+  title: The Conversation
+  by: Francis Ford Coppola
+  year: 1974
+  star: true
+  note: A man who listens for a living, undone by listening. This paper has
+    watched it four times and heard something new on each.
+
+- kind: film
+  title: Chungking Express
+  by: Wong Kar-wai
+  year: 1994
+  note: Nothing happens twice, beautifully.
+
+- kind: film
+  title: Paprika
+  by: Satoshi Kon
+  year: 2006
+  note: Everything Inception did, three years earlier, in half the runtime and
+    twice the colour.
+
+- kind: book
+  title: The Design of Everyday Things
+  by: Don Norman
+  year: 1988
+  star: true
+  note: Ruined doors forever. Worth it.
+
+- kind: book
+  title: Zen and the Art of Motorcycle Maintenance
+  by: Robert Pirsig
+  year: 1974
+  note: Half of it is about a motorcycle. The other half is also about a
+    motorcycle.
+
+- kind: book
+  title: The Soul of a New Machine
+  by: Tracy Kidder
+  year: 1981
+  note: A year in a basement, building a computer, told as a thriller. This
+    paper takes it personally.
+
+- kind: record
+  title: Kid A
+  by: Radiohead
+  year: 2000
+  note: Soldering music. The bench agrees.
+
+- kind: record
+  title: Aja
+  by: Steely Dan
+  year: 1977
+  star: true
+  note: Every part of it is trying too hard, which is the point.
+
+- kind: record
+  title: Endtroducing.....
+  by: DJ Shadow
+  year: 1996
+  note: Built entirely from other people's records, which this paper considers
+    an honourable tradition.

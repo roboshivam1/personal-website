@@ -5,6 +5,7 @@ date: 2026-07-08
 section: lab-notes
 weight: 40
 tags: [debugging]
+about: jarvis-mk2
 ---
 
 Short note, written the day it happened.

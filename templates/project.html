@@ -5,3 +5,19 @@
   {% if story.link %} &middot; <a href="{{ story.link }}" style="color:var(--spot)">Visit &rarr;</a>{% endif %}
 </p>
 {% endblock %}
+
+{% block related %}
+{% if related %}
+<div class="related">
+  <p class="flag">From the desk on this project</p>
+  <ul class="related__list">
+    {% for d in related %}
+    <li>
+      <a href="{{ d.url }}" class="related__title">{{ d.title }}</a>
+      <span class="related__meta">{{ d.section|replace('-', ' ') }} &middot; {{ d.date|short_date }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
+{% endblock %}

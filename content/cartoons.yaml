@@ -1,0 +1,6 @@
+# The cartoon. One entry per issue; it rotates like the car and the picture.
+# Leave `image` out and the paper prints a standing apology instead, which is
+# the honest placeholder — a drawing you did not draw is not your cartoon.
+
+- caption: JARVIS files its first correction.
+  # image: /img/cartoons/first-correction.png
