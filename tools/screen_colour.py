@@ -23,10 +23,10 @@ from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFont, ImageOps,
 #  EDIT THIS
 # ══════════════════════════════════════════════════════════════════════
 
-INPUT = "photos/HW/IMG_4136 2.JPG"           # the original. relative to the project root.
-OUTPUT = "static/img/motoring/IMG_4136_dotted.JPG"      # where the finished plate goes.
+INPUT = "photos/photography/pic15.png"           # the original. relative to the project root.
+OUTPUT = "static/img/photos/img15_cmyk.png"      # where the finished plate goes.
 
-MODE = "duotone"        # "mono" | "duotone" | "cmyk"
+MODE = "cmyk"        # "mono" | "duotone" | "cmyk"
 CONTACT_SHEET = False   # True -> a labelled grid of settings next to OUTPUT.
 
 CELL = 5          # px per dot. 3 = fine, 8 = aggressively printed.
