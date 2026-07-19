@@ -4,42 +4,42 @@
 # image    screened by tools/screen.py, dropped in static/img/photos/
 # caption  what it is. captions are the most-read text on a newspaper page
 #          after the headline. do not waste them.
-- image: /img/photos/img13_cmyk.jpg
+- image: /img/photos2/img13_cmyk.jpg
   caption: The HotWheels collection I can't stop talking about. Also see Motoring.
 
-- image: /img/photos/img2_cmyk.JPG
+- image: /img/photos2/img2_cmyk.JPG
   caption: Where it all began. The original bike, now under resurrection.
 
-- image: /img/photos/img4_cmyk.jpg
+- image: /img/photos2/img4_cmyk.jpg
   caption: The surprisingly understandable insides of an old Sony music system.
 
-- image: /img/photos/img5_cmyk.jpg
+- image: /img/photos2/img5_cmyk.jpg
   caption: The generation-old music system, amidst revival.
 
-- image: /img/photos/img6_cmyk.jpg
+- image: /img/photos2/img6_cmyk.jpg
   caption: ACE, now sitting in my room.
 
-- image: /img/photos/img7_cmyk.PNG
+- image: /img/photos2/img7_cmyk.PNG
   caption: One of the many incense sticks and what not burnt in the name of testing.
 
-- image: /img/photos/img8_cmyk.jpg
+- image: /img/photos2/img8_cmyk.jpg
   caption: Vinyl is cool.
 
-- image: /img/photos/img9_cmyk.jpg
+- image: /img/photos2/img9_cmyk.jpg
   caption: Picked up from a scrap shop. whatever suited the eye.
 
-- image: /img/photos/img11_cmyk.jpg
+- image: /img/photos2/img11_cmyk.jpg
   caption: The bike frame, in its personal transportation(I had to sit beside the driver).
 
-- image: /img/photos/img12_cmyk.jpg
+- image: /img/photos2/img12_cmyk.jpg
   caption: this one is hard to explain
 
-- image: /img/photos/img1_cmyk.JPG
+- image: /img/photos2/img1_cmyk.JPG
   caption: A fraction of the realm of scrap.
 
 
-- image: /img/photos/img14_cmyk.jpg
+- image: /img/photos2/img14_cmyk.jpg
   caption: A man without love.(if you get it)
 
-- image: /img/photos/img15_cmyk.PNG
+- image: /img/photos2/img15_cmyk.PNG
   caption: Just another session - me and the OLED.
