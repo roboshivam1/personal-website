@@ -18,15 +18,15 @@ from PIL import Image, ImageDraw, ImageEnhance, ImageFont, ImageOps, ImageStat
 #  EDIT THIS
 # ══════════════════════════════════════════════════════════════════════
 
-INPUT = "photos/HW/acura90nsx.jpg"           # the original. relative to the project root.
-OUTPUT = "static/img/motoring/acura90nsx_dotted.jpg"      # where the finished plate goes.
+INPUT = "photos/HW/IMG_4184 2.JPG"           # the original. relative to the project root.
+OUTPUT = "static/img/motoring/IMG_4184_dotted.JPG"      # where the finished plate goes.
 
 CONTACT_SHEET = False   # True -> ignore OUTPUT, write a labelled grid of nine
                         # settings next to it. Open it, pick a tile, copy its
                         # numbers down here, set this back to False, run again.
 
-CELL = 5          # px per dot. 3 = fine, 8 = aggressively printed. THE look knob.
-TARGET = 0.52     # average tone of the plate, 0..1. THE exposure knob.
+CELL = 6          # px per dot. 3 = fine, 8 = aggressively printed. THE look knob.
+TARGET = 0.65     # average tone of the plate, 0..1. THE exposure knob.
 GAIN = 1.4        # dot size multiplier. >1 lets dark dots merge, like wet ink.
 ANGLE = 45        # screen angle. 45 is what a real press uses for one colour.
 CONTRAST = 1.15   # crushed a little after exposure. 1.6 blows out highlights.

@@ -7,37 +7,617 @@
 # description the review. deadpan. never wink.
 
 - name: "'96 Porsche Carrera"
-  issued: 1968
-  acquired: 2019-08
-  image: /img/motoring/pc96_dotted.JPG
-  series: Redline
+  issued: 2020
+  acquired: 2025-04
+  image: /img/motoring/IMG_4136_dotted.JPG
+  series: HW The '90s
   description: >
-    The first one. Paint is spectraflame lime, chipped at the nearside rear
-    where it met a skirting board at speed. Axles remain true. Handling has not
-    been assessed, the test track being a kitchen table.
+    Stuttgart's answer to subtlety. Looks fast while standing perfectly still,
+    which is fortunate given its current duties on a shelf.
 
 - name: "'90 Acura NSX"
-  issued: 1969
-  acquired: 2021-03
-  image: /img/cars/twin-mill.png
-  series: Redline
+  issued: 2022
+  acquired: 2025-05
+  image: /img/motoring/IMG_4137_dotted.JPG
+  series: HW The '90s
   description: >
-    Two engines, no discernible reason. This paper considers that sufficient
-    reason. Acquired at a price the editor declines to disclose.
+    The everyday supercar, condensed to palm size. Still manages to look like
+    it has somewhere more interesting to be.
 
-- name: Chill Mill
-  issued: 2006
-  acquired: 2023-11
-  image: /img/cars/bone-shaker.png
+- name: "Chill Mill"
+  issued: 2015
+  acquired: 2016-01
+  image: /img/motoring/IMG_4138_dotted.JPG
+  series: HW City
   description: >
-    Modern, and none the worse for it. The skull grille is the sort of decision
-    a committee would have removed.
+    A dairy truck.
 
-- name: Monster Dairy Delivery
-  issued: 1974
+- name: "Monster Dairy Delivery"
+  issued: 2012
+  acquired: 2017-10
+  image: /img/motoring/IMG_4139_dotted.JPG
+  series: 2012 New Models
+  description: >
+    Delivers milk with all the subtlety of a small earthquake. Nutrition may be
+    optional; dramatic entrances are not.
+
+- name: "Supercharged"
+  issued: 2025
+  acquired: 2025-08
+  image: /img/motoring/IMG_4140_dotted.JPG
+  series: HW EV
+  description: >
+    Advertises instant torque with admirable confidence. Whether anyone asked
+    for an electric funny car remains a separate engineering discussion.
+
+- name: "Super Twin Mill"
+  issued: 2024
+  acquired: 2025-07
+  image: /img/motoring/IMG_4141_dotted.JPG
+  series: Let's Race
+  description: >
+    Apparently one Twin Mill wasn't quite enough. The solution was to add more
+    attitude and trust that aerodynamics would sort out the paperwork.
+
+- name: "Dodge XP-07"
+  issued: 2008
+  acquired: 2017-04
+  image: /img/motoring/IMG_4142_dotted.JPG
+  series: Designers Challenge
+  description: >
+    Built to chase land-speed records, yet now content with collecting dust.
+    Even turbine engines have to retire eventually.
+
+- name: "Deora III"
+  issued: 2019
+  acquired: 2024-04
+  image: /img/motoring/IMG_4143_dotted.JPG
+  series: HW Getaways
+  description: >
+    Comes with surfboards and an e-bike, suggesting someone planned the weekend
+    far better than the average collector ever does.
+
+- name: "Coupe Clip"
+  issued: 2022
+  acquired: 2025-02
+  image: /img/motoring/IMG_4144_dotted.JPG
+  series: Experimotors
+  description: >
+    Technically a Hot Wheels car, technically a keychain. Commits fully to
+    solving a problem nobody was particularly troubled by.
+
+- name: "Rally Speciale"
+  issued: 2023
+  acquired: 2024-05
+  image: /img/motoring/IMG_4145_dotted.JPG
+  series: Track Champs
+  description: >
+    Designed for gravel stages and impossible confidence. Has yet to encounter
+    either, though the bookshelf does feature a suspiciously loose pebble.
+
+- name: "Shelby Cobra Daytona Coupe"
+  issued: 2007
+  acquired: 2025-11
+  image: /img/motoring/IMG_4146_dotted.JPG
+  series: New Models
+  description: >
+    Built to embarrass Ferraris in the 1960s. Now spends its retirement proving
+    that good proportions never go out of style.
+
+- name: "Batmobile Arkham Knight"
+  issued: 2015
+  acquired: 2025-04
+  image: /img/motoring/IMG_4147_dotted.JPG
+  series: HW City
+  description: >
+    Optimised for pursuing supervillains through Gotham. Slightly excessive for
+    the journey from display shelf to desk, but reassuring nonetheless.
+
+- name: "Max Steel"
+  issued: 2022
+  acquired: 2024-10
+  image: /img/motoring/IMG_4148_dotted.JPG
+  series: Rod Squad
+  description: >
+    Looks as though it escaped a 1920s speed record attempt. Fortunately, its
+    only real competition is the occasional dust particle.
+
+- name: "Hi-Roller II"
+  issued: 2016
+  acquired: 2025-08
+  image: /img/motoring/IMG_4149_dotted.JPG
+  series: HW Ride-Ons
+  description: >
+    A luxury coupe from a future where good taste apparently became much larger.
+    Parks with confidence regardless of available space.
+
+- name: "Alfa Romeo GTV6 3.0"
+  issued: 2023
+  acquired: 2025-02
+  image: /img/motoring/IMG_4150_dotted.JPG
+  series: Retro Racers
+  description: >
+    An Italian coupe with impeccable taste and just enough unpredictability to
+    keep mechanics intellectually engaged.
+
+- name: "'87 Audi quattro"
+  issued: 2024
+  acquired: 2026-03
+  image: /img/motoring/IMG_4151_dotted.JPG
+  series: HW Turbo
+  description: >
+    The rally legend that convinced mountains to become roads. Continues to
+    look thoroughly prepared for weather the display cabinet has never seen.
+
+- name: "'64 Impala"
+  issued: 2003
   acquired: 2024-06
-  image: /img/cars/rodger-dodger.png
+  image: /img/motoring/IMG_4152_dotted.JPG
+  series: First Editions
   description: >
-    Bought damp from a Sunday market in Jaipur for less than a cup of tea.
-    Cleaned up better than it had any right to.
+    A lowrider icon with enough chrome to reflect questionable life choices.
+    Thankfully, miniature hydraulics require remarkably little maintenance.
 
+- name: "'64 Impala"
+  issued: 2003
+  acquired: 2025-06
+  image: /img/motoring/IMG_4152_dotted.JPG
+  series: First Editions
+  description: >
+    A lowrider icon with enough chrome to reflect questionable life choices.
+    Thankfully, miniature hydraulics require remarkably little maintenance.
+
+- name: "Team Hot Wheels Corkscrew Buggy"
+  issued: 2013
+  acquired: 2017-12
+  image: /img/motoring/IMG_4153_dotted.JPG
+  series: HW Stunt- Road Rally
+  description: >
+    Designed to perform a world-record corkscrew jump. Your bookshelf remains
+    unconvinced, though the ambition is appreciated.
+
+- name: "Electrack"
+  issued: 2018
+  acquired: 2024-11
+  image: /img/motoring/IMG_4154_dotted.JPG
+  series: X-Raycers
+  description: >
+    Transparent bodywork leaves very little to the imagination. Convenient for
+    anyone wishing to inspect imaginary hybrid technology without opening the bonnet.
+
+- name: "Custom Cadillac Fleetwood"
+  issued: 2013
+  acquired: 2025-07
+  image: /img/motoring/IMG_4155_dotted.JPG
+  series: HW Showroom- American Turbo
+  description: >
+    A grand American cruiser given entirely unnecessary horsepower. Elegance
+    and excess appear to have reached a mutually beneficial agreement.
+
+- name: "'67 Lotus Type 49"
+  issued: 2024
+  acquired: 2025-01
+  image: /img/motoring/IMG_4156_dotted.JPG
+  series: HW Race Day
+  description: >
+    The Formula One car that introduced an engine with structural ambitions.
+    Continues to win imaginary Grands Prix between the bookshelf and the lamp.
+
+- name: "Fish'd & Chip'd (Scorpion Edition)"
+  issued: 2006
+  acquired: 2024-08
+  image: /img/motoring/IMG_4157_dotted.JPG
+  series: Spider-Man Silver Series
+  description: >
+    A seafood delivery van dressed as one of Spider-Man's less approachable
+    acquaintances. Perfectly sensible once you stop expecting explanations.
+
+- name: "Cruise Bruiser"
+  issued: 2016
+  acquired: 2024-09
+  image: /img/motoring/IMG_4158_dotted.JPG
+  series: HW Ride-Ons
+  description: >
+    Equal parts luxury yacht and family saloon. Somehow suggests a relaxing
+    holiday while appearing entirely incapable of fitting into a marina.
+
+- name: "'95 Mazda MX-5 Miata"
+  issued: 2024
+  acquired: 2025-10
+  image: /img/motoring/IMG_4159_dotted.JPG
+  series: HW J-Imports
+  description: >
+    The automotive equivalent of a well-balanced cup of coffee. Never the
+    fastest thing present, yet somehow the one everyone ends up smiling about.
+
+- name: "Hot Wheengs"
+  issued: 2022
+  acquired: 2025-06
+  image: /img/motoring/IMG_4160_dotted.JPG
+  series: HW Metro
+  description: >
+    A food truck whose menu appears secondary to the pun. Serves imaginary
+    snacks with a level of confidence usually reserved for Michelin stars.
+
+- name: "Mattel Dream Mobile"
+  issued: 2025
+  acquired: 2026-01
+  image: /img/motoring/IMG_4161_dotted.JPG
+  series: HW Celebration Racers
+  description: >
+    A birthday cake disguised as transportation. Impressively festive, though
+    its aerodynamic credentials remain understandably unverified.
+
+- name: "Custom '66 Toronado"
+  issued: 2026
+  acquired: 2025-09
+  image: /img/motoring/IMG_4162_dotted.JPG
+  series: Factory Fresh
+  description: >
+    A front-wheel-drive luxury coupe made unapologetically cooler. Somehow
+    manages to look both refined and mildly rebellious at the same time.
+
+- name: "Mod Mill"
+  issued: 2024
+  acquired: 2024-04
+  image: /img/motoring/IMG_4163_dotted.JPG
+  series: Muscle Mania
+  description: >
+    Appears to have been assembled from equal parts hot rod and engineering
+    experiment. Remarkably, the resulting paperwork seems to have been approved.
+
+- name: "Mod Mill"
+  issued: 2024
+  acquired: 2024-04
+  image: /img/motoring/IMG_4163_dotted.JPG
+  series: Muscle Mania
+  description: >
+    Appears to have been assembled from equal parts hot rod and engineering
+    experiment. Remarkably, the resulting paperwork seems to have been approved.
+
+- name: "Rogue Hog (Spider-Man Edition)"
+  issued: 2023
+  acquired: 2025-03
+  image: /img/motoring/IMG_4165_dotted.JPG
+  series: Spider-Man
+  description: >
+    A motorcycle apparently approved by comic-book physics. Entirely excessive
+    for city traffic, which is precisely the point.
+
+- name: "Bugatti Bolide"
+  issued: 2024
+  acquired: 2024-12
+  image: /img/motoring/IMG_4166_dotted.JPG
+  series: HW Exotics
+  description: >
+    A machine engineered almost entirely around speed. Mercifully, the display
+    shelf imposes a rather strict speed limit.
+
+- name: "La Fasta"
+  issued: 2013
+  acquired: 2018-07
+  image: /img/motoring/IMG_4167_dotted.JPG
+  series: HW Art Cars
+  description: >
+    Styled as though speed itself hired a graphic designer. It appears to be in
+    an extraordinary hurry despite having nowhere in particular to go.
+
+- name: "Nerve Hammer"
+  issued: 2023
+  acquired: 2025-11
+  image: /img/motoring/IMG_4168_dotted.JPG
+  series: HW Track Champs
+  description: >
+    Designed with all the restraint of a heavy metal album cover. Its natural
+    habitat appears to be orange plastic track and poor decisions.
+
+- name: "Toyota GR86 Cup"
+  issued: 2024
+  acquired: 2024-05
+  image: /img/motoring/IMG_4169_dotted.JPG
+  series: HW J-Imports
+  description: >
+    A proper one-make race car, shrunk without sacrificing any of its
+    determination. Still appears to be expecting qualifying to begin shortly.
+
+- name: "Cool-One (Spider-Man Edition – Venom)"
+  issued: 1982
+  acquired: 2025-06
+  image: /img/motoring/IMG_4170_dotted.JPG
+  series: Spider-Man Silver Series
+  description: >
+    A vintage delivery van thoroughly overtaken by a symbiote. Parcel handling
+    standards have, understandably, become somewhat unpredictable.
+
+- name: "'71 Lamborghini Miura P400 SV"
+  issued: 2024
+  acquired: 2025-08
+  image: /img/motoring/IMG_4171_dotted.JPG
+  series: HW Exotics
+  description: >
+    Frequently described as one of the world's most beautiful cars. The tiny
+    version appears quietly satisfied that the argument was settled long ago.
+
+- name: "Maserati Shamal"
+  issued: 2025
+  acquired: 2025-02
+  image: /img/motoring/IMG_4172_dotted.JPG
+  series: Factory Fresh
+  description: >
+    An Italian grand tourer from the era when sharp edges were considered a
+    design philosophy. Still looks mildly offended by modern traffic.
+
+- name: "2019 Audi R8 Spyder"
+  issued: 2021
+  acquired: 2024-10
+  image: /img/motoring/IMG_4173_dotted.JPG
+  series: HW Exotics
+  description: >
+    A V10 convertible for those who prefer their sunshine accompanied by
+    improbable acceleration. Happily spends most of its time posing instead.
+
+- name: "Arkham Asylum Batmobile"
+  issued: 2024
+  acquired: 2025-04
+  image: /img/motoring/IMG_4174_dotted.JPG
+  series: Batman
+  description: >
+    Designed for patrolling Gotham's least welcoming postcode. Comfort appears
+    to have been sacrificed somewhere around the armoured plating.
+
+- name: "Hoto Roto"
+  issued: 2018
+  acquired: 2024-03
+  image: /img/motoring/IMG_4175_dotted.JPG
+  series: Nightburnerz
+  description: >
+    A Japanese hot rod with four rotary engines because apparently one was far
+    too sensible. Calmly ignores all known principles of moderation.
+
+- name: "Tesla Cybertruck"
+  issued: 2024
+  acquired: 2025-09
+  image: /img/motoring/IMG_4176_dotted.JPG
+  series: HW Green Speed
+  description: >
+    Resembles a concept sketch that accidentally reached production. Continues
+    to divide opinions with remarkable aerodynamic efficiency.
+
+- name: "Tesla Cyberquad"
+  issued: 2021
+  acquired: 2024-11
+  image: /img/motoring/IMG_4177_dotted.JPG
+  series: HW Green Speed
+  description: >
+    The sensible companion to the Cybertruck, if anything wearing sharp angles
+    can still be described as sensible. Happily awaits terrain it will never encounter.
+
+- name: "Hako Type D"
+  issued: 2025
+  acquired: 2025-01
+  image: /img/motoring/IMG_4178_dotted.JPG
+  series: HW J-Imports
+  description: >
+    Boxy enough to make the 1980s proud, futuristic enough to confuse them.
+    Drifts entirely on reputation while remaining perfectly stationary.
+
+- name: "Nissan Skyline 2000 GT-R"
+  issued: 2009
+  acquired: 2025-07
+  image: /img/motoring/IMG_4179_dotted.JPG
+  series: New Models
+  description: >
+    Better known as the Hakosuka. Carries decades of racing pedigree with the
+    quiet confidence of a car that has nothing left to prove.
+
+- name: "Count Muscula (Batman & Robin Edition)"
+  issued: 2014
+  acquired: 2024-08
+  image: /img/motoring/IMG_4180_dotted.JPG
+  series: Batman
+  description: >
+    A vampire-themed hot rod drafted into Gotham's service. Proof that even
+    the Bat-Signal occasionally attracts delightfully questionable applicants.
+
+- name: "Ford Escort RS1600"
+  issued: 2023
+  acquired: 2025-12
+  image: /img/motoring/IMG_4181_dotted.JPG
+  series: HW Rally Champs
+  description: >
+    A rally legend from the era when bravery outweighed horsepower. Looks
+    permanently prepared to fling gravel at entirely innocent spectators.
+
+- name: "Cadillac ATS-V R"
+  issued: 2017
+  acquired: 2024-02
+  image: /img/motoring/IMG_4182_dotted.JPG
+  series: HW Race Team
+  description: >
+    A GT race car whose job description consists almost entirely of going very
+    quickly in circles. Takes its miniature responsibilities with admirable seriousness.
+
+- name: "Layin' Lowrider"
+  issued: 2022
+  acquired: 2025-05
+  image: /img/motoring/IMG_4183_dotted.JPG
+  series: HW Art Cars
+  description: >
+    Sits improbably close to the ground without ever complaining. Clearly
+    convinced that suspension travel is a negotiable concept.
+
+- name: "Honda Motocompo"
+  issued: 2024
+  acquired: 2024-09
+  image: /img/motoring/IMG_4184_dotted.JPG
+  series: HW Moto
+  description: >
+    Folds neatly into the boot of a tiny city car. An admirably practical idea
+    that somehow became irresistibly charming in miniature.
+
+- name: "MoneyGram Haas F1 Team"
+  issued: 2025
+  acquired: 2025-10
+  image: /img/motoring/IMG_4185_dotted.JPG
+  series: Formula 1 Collection
+  description: >
+    A Formula One car whose natural habitat is measured in milliseconds.
+    Fortunately, the shelf has never enforced qualifying regulations.
+
+- name: "Oracle Red Bull Racing"
+  issued: 2025
+  acquired: 2025-03
+  image: /img/motoring/IMG_4186_dotted.JPG
+  series: Formula 1 Collection
+  description: >
+    Built for winning races with unsettling regularity. Fortunately for the
+    rest of the collection, podium ceremonies remain entirely optional.
+
+- name: "Mercedes-AMG PETRONAS Formula One Team"
+  issued: 2025
+  acquired: 2024-12
+  image: /img/motoring/IMG_4187_dotted.JPG
+  series: Formula 1 Collection
+  description: >
+    Engineered with the sort of precision that makes stopwatches nervous.
+    Spends its weekends dominating a display case instead of a race circuit.
+
+- name: "BWT Alpine Formula One Team"
+  issued: 2025
+  acquired: 2025-11
+  image: /img/motoring/IMG_4188_dotted.JPG
+  series: Formula 1 Collection
+  description: >
+    Dressed in unmistakable pink and blue, ensuring subtlety never made the
+    design brief. Brings Formula One optimism to the display shelf every weekend.
+
+- name: "Atlassian Williams Racing"
+  issued: 2025
+  acquired: 2025-06
+  image: /img/motoring/IMG_4189_dotted.JPG
+  series: Formula 1 Collection
+  description: >
+    Carries one of Formula One's most storied names with quiet determination.
+    The comeback tour is progressing nicely across the bookshelf.
+
+- name: "Gordon Murray Automotive T.33"
+  issued: 2025
+  acquired: 2024-04
+  image: /img/motoring/IMG_4190_dotted.JPG
+  series: HW Exotics
+  description: >
+    Designed by the man who penned the McLaren F1. Displays impeccable manners
+    while quietly reminding everyone that lightness never goes out of fashion.
+
+- name: "Honda Civic Custom"
+  issued: 2025
+  acquired: 2025-08
+  image: /img/motoring/IMG_4191_dotted.JPG
+  series: HW J-Imports
+  description: >
+    A humble Civic that clearly declined the suggestion of remaining humble.
+    Carries aftermarket confidence in quantities that exceed factory specification.
+
+- name: "Ford F-150 Lightning SuperTruck"
+  issued: 2025
+  acquired: 2024-06
+  image: /img/motoring/IMG_4192_dotted.JPG
+  series: HW Green Speed
+  description: >
+    An electric pickup that appears to have mistaken Pikes Peak for a casual
+    Sunday drive. Perfectly civil until someone mentions lap times.
+
+- name: "Morgan Super 3"
+  issued: 2025
+  acquired: 2025-02
+  image: /img/motoring/IMG_4193_dotted.JPG
+  series: Factory Fresh
+  description: >
+    Three wheels, two seats, and absolutely no interest in modern convention.
+    Continues to prove that sensible engineering and entertaining engineering
+    are not always the same thing.
+
+- name: "X-Raycers RD-06"
+  issued: 2025
+  acquired: 2024-08
+  image: /img/motoring/IMG_4194_dotted.JPG
+  series: X-Raycers
+  description: >
+    Kindly displays its internal workings without being asked. Ideal for anyone
+    who enjoys seeing how things work, or simply appreciates transparent
+    overachievement.
+
+- name: "Solar Reflex"
+  issued: 2025
+  acquired: 2025-09
+  image: /img/motoring/IMG_4195_dotted.JPG
+  series: HW Green Speed
+  description: >
+    Appears determined to save the planet at improbable speed. Whether the
+    solar panels contribute anything measurable is left as an exercise for the
+    engineers.
+
+- name: "McLaren Formula 1 Team"
+  issued: 2025
+  acquired: 2025-07
+  image: /img/motoring/IMG_4201_dotted.JPG
+  series: Formula 1 Premium
+  description: >
+    Papaya orange with a persistent habit of appearing near the front. Even in
+    miniature, it carries itself as though qualifying has gone rather well.
+
+- name: "Cobra H.I.S.S. (G.I. Joe)"
+  issued: 2025
+  acquired: 2024-11
+  image: /img/motoring/IMG_4202_dotted.JPG
+  series: Pop Culture Premium
+  description: >
+    Built for world domination, now reassigned to shelf decoration. Its military
+    campaign currently consists of intimidating neighbouring die-cast cars.
+
+- name: "MoneyGram Haas F1 Team"
+  issued: 2025
+  acquired: 2025-05
+  image: /img/motoring/IMG_4203_dotted.JPG
+  series: Formula 1 Premium
+  description: >
+    A Formula One machine with a talent for exceeding expectations just often
+    enough to keep the engineers thoroughly entertained.
+
+- name: "'92 Honda Civic EG"
+  issued: 2025
+  acquired: 2025-01
+  image: /img/motoring/IMG_4204_dotted.JPG
+  series: 58th Anniversary
+  description: >
+    A tuning icon that has spent decades refusing to go out of fashion. This
+    anniversary edition celebrates the fact with admirable understatement.
+
+- name: "Kool Kombi"
+  issued: 2015
+  acquired: 2024-10
+  image: /img/motoring/IMG_4205_dotted.JPG
+  series: Mattel 80th Anniversary
+  description: >
+    A cheerful Volkswagen van commemorating eighty years of making toys.
+    Radiates the sort of optimism usually associated with perfect weather and
+    no traffic whatsoever.
+
+- name: "1994 Honda Del Sol"
+  issued: 2024
+  acquired: 2025-09
+  image: /img/motoring/IMG_4206_dotted.JPG
+  series: Fast & Furious Premium
+  description: >
+    A compact targa-top made famous by Hollywood. Continues to suggest
+    questionable street races while remaining impeccably parked.
+
+- name: "'69 Ford Torino Talladega"
+  issued: 2025
+  acquired: 2025-07
+  image: /img/motoring/IMG_4207_dotted.JPG
+  series: HW Premium
+  description: >
+    Built to make NASCAR officials slightly uncomfortable. Still carries the
+    quiet confidence of a car that was engineered to win first and explain
+    itself afterwards.
