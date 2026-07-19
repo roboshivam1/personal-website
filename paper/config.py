@@ -26,10 +26,10 @@ SITE = {
     # The markets desk. symbol is a 4-letter ticker; repo is owner/name.
     # Placeholder repos — swap in your own.
     "repos": [
-        {"symbol": "JRVS", "repo": "pallets/jinja"},
-        {"symbol": "EBIK", "repo": "python-pillow/Pillow"},
-        {"symbol": "VDYT", "repo": "pydantic/pydantic"},
-        {"symbol": "SQON", "repo": "python-markdown/markdown"},
+        {"symbol": "JRVS", "repo": "roboshivam1/JARVIS-MK2"},
+        {"symbol": "SITE", "repo": "roboshivam1/personal-website"},
+        {"symbol": "SCHL", "repo": "roboshivam1/School-Content-Engine"},
+        {"symbol": "AIRG", "repo": "roboshivam1/AI-Dialogue-Reel-Generator"},
     ],
     "weather": {                # placeholder — a build-time fetch can fill this later
         "summary": "Hazy, hot",

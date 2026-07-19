@@ -1,0 +1,204 @@
+# The collection. One entry per car. Placeholder data — replace with the real thing.
+#
+# name        what it is
+# issued      year the casting was issued
+# acquired    YYYY-MM. day is not remembered and does not matter.
+# image       screened by tools/screen.py, dropped in static/img/cars/
+# description the review. deadpan. never wink.
+
+- name: "'96 Porsche Carrera"
+  issued: 1968
+  acquired: 2019-08
+  image: /img/motoring/pc96_dotted.JPG
+  series: Redline
+  description: >
+    The first one. Paint is spectraflame lime, chipped at the nearside rear
+    where it met a skirting board at speed. Axles remain true. Handling has not
+    been assessed, the test track being a kitchen table.
+
+- name: "'90 Acura NSX"
+  issued: 1969
+  acquired: 2021-03
+  image: /img/cars/twin-mill.png
+  series: Redline
+  description: >
+    Two engines, no discernible reason. This paper considers that sufficient
+    reason. Acquired at a price the editor declines to disclose.
+
+- name: Chill Mill
+  issued: 2006
+  acquired: 2023-11
+  image: /img/cars/bone-shaker.png
+  description: >
+    Modern, and none the worse for it. The skull grille is the sort of decision
+    a committee would have removed.
+
+- name: Monster Dairy Delivery
+  issued: 1974
+  acquired: 2024-06
+  image: /img/cars/rodger-dodger.png
+  description: >
+    Bought damp from a Sunday market in Jaipur for less than a cup of tea.
+    Cleaned up better than it had any right to.
+
+- name: SUPERCHARGED
+  issued: 
+  acquired: 
+  image: /img/motoring/
+  description: >
+    
+
+- name: "Super Twin Mill"
+  issued: 1977
+  acquired: 2026-05
+  image: /img/cars/57-chevy.png
+  series: Redline
+  description: >
+    The most recent arrival. Blown engine through the bonnet, as the era
+    demanded. Still smells faintly of somebody else's cupboard.
+
+- name: MJ
+  issued: 
+  acquired: 
+  image: /img/motoring/
+  description: >
+    
+- name: DEORA III
+  issued: 
+  acquired: 
+  image: /img/motoring/
+  description: >
+    
+- name: Coupe Clip
+  issued: 
+  acquired: 
+  image: /img/motoring/
+  description: >
+    
+- name: Rally Speciale
+  issued: 
+  acquired: 
+  image: /img/motoring/
+  description: >
+    
+- name: Shelby Cobra Daytona Coupe
+  issued: 
+  acquired: 
+  image: /img/motoring/
+  description: >
+    
+- name: Batmobile Arkham Night
+  issued: 
+  acquired: 
+  image: /img/motoring/
+  description: >
+    
+- name: Max Steel
+  issued: 
+  acquired: 
+  image: /img/motoring/
+  description: >
+    
+- name: Alfa Romeo GTV6
+  issued: 
+  acquired: 
+  image: /img/motoring/
+  description: >
+    
+- name: 
+  issued: 
+  acquired: 
+  image: /img/motoring/
+  description: >
+    
+- name: Hi-Roller II
+  issued: 
+  acquired: 
+  image: /img/motoring/
+  description: >
+    
+
+- name: "'87 Audi Quattro"
+  issued: 
+  acquired: 
+  image: /img/motoring/
+  description: >
+    
+- name: "'64 Impala"
+  issued: 
+  acquired: 
+  image: /img/motoring/
+  description: >
+    
+- name: Electrack
+  issued: 
+  acquired: 
+  image: /img/motoring/
+  description: >
+    
+- name: 
+  issued: 
+  acquired: 
+  image: /img/motoring/
+  description: >
+    
+- name: 
+  issued: 
+  acquired: 
+  image: /img/motoring/
+  description: >
+    
+- name: 
+  issued: 
+  acquired: 
+  image: /img/motoring/
+  description: >
+    
+- name: 
+  issued: 
+  acquired: 
+  image: /img/motoring/
+  description: >
+    
+- name: 
+  issued: 
+  acquired: 
+  image: /img/motoring/
+  description: >
+    
+- name: 
+  issued: 
+  acquired: 
+  image: /img/motoring/
+  description: >
+    
+- name: 
+  issued: 
+  acquired: 
+  image: /img/motoring/
+  description: >
+    
+- name: 
+  issued: 
+  acquired: 
+  image: /img/motoring/
+  description: >
+    
+- name: 
+  issued: 
+  acquired: 
+  image: /img/motoring/
+  description: >
+    
+- name: 
+  issued: 
+  acquired: 
+  image: /img/motoring/
+  description: >
+    
+- name: 
+  issued: 
+  acquired: 
+  image: /img/motoring/
+  description: >
+    

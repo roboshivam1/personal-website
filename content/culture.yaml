@@ -8,32 +8,57 @@
 # star   optional, true for the standing recommendation
 
 - kind: film
-  title: The Conversation
-  by: Francis Ford Coppola
-  year: 1974
+  title: Smallville
+  by: Alfred Gough
+  year: 2001
   star: true
-  note: A man who listens for a living, undone by listening. This paper has
-    watched it four times and heard something new on each.
+  note: Based on the story of Clark Kent's teenage years before becoming Superman.
+    Really cool balance in multiple story aspects.
 
 - kind: film
-  title: Chungking Express
-  by: Wong Kar-wai
-  year: 1994
+  title: Rush Hour
+  by: Jackie Chan, Chris Tucker
+  year: 1998
   note: Nothing happens twice, beautifully.
 
 - kind: film
-  title: Paprika
-  by: Satoshi Kon
-  year: 2006
-  note: Everything Inception did, three years earlier, in half the runtime and
-    twice the colour.
+  title: Ra.One
+  by: Shah Rukh Khan
+  year: 2011
+  note: I love superheroes, I love bollywood, I love gamedev. I rarely admit 
+    but this one's my actual favourite.
+
+- kind: film
+  title: Iron Man
+  by: Robert Downey Jr., Jon Favreau 
+  year: 2011
+  note: The classic! Heavily inspiring and the film that got me listening rock.
 
 - kind: book
-  title: The Design of Everyday Things
-  by: Don Norman
+  title: Moonwalk
+  by: Michael Jackson
   year: 1988
-  star: true
-  note: Ruined doors forever. Worth it.
+  note: Had a rare genuine tone in it.
+
+- kind: book
+  title: In Search of Schrodinger's Cat
+  by: John Gribbin
+  year: 1984
+  note: The true complete story of development of Quantum Mechanics. Was pretty
+    hard for me to understand initially tho.
+
+- kind: book
+  title: The Man Who Bent Light
+  by: Narinder Singh Kapany
+  year: 2021
+  note: Autobiography of the father of Fibre Optics. Perfectly captures development
+    of technology in early India.
+
+- kind: book
+  title: Shah Rukh Khan - Legend, Icon, Star
+  by: Mohar Basu
+  year: 2024
+  note: Who doesn't like reading about bollywood c'mon. Plus SRK is my favourite.
 
 - kind: book
   title: Zen and the Art of Motorcycle Maintenance
@@ -43,28 +68,41 @@
     motorcycle.
 
 - kind: book
-  title: The Soul of a New Machine
-  by: Tracy Kidder
-  year: 1981
-  note: A year in a basement, building a computer, told as a thriller. This
-    paper takes it personally.
+  title: The Creativity Code
+  by: Marcus Du Sautoy
+  year: 2019
+  star: True
+  note: Rationally thought-provoking to say the least. Dismissing the Turing test,
+    championing the Lovelace test.
 
 - kind: record
-  title: Kid A
-  by: Radiohead
-  year: 2000
+  title: Highway To Hell
+  by: AC/DC
+  year: 1979
   note: Soldering music. The bench agrees.
 
 - kind: record
-  title: Aja
-  by: Steely Dan
+  title: Rubberband Man
+  by: The Spinners
   year: 1977
   star: true
-  note: Every part of it is trying too hard, which is the point.
+  note: Peter Quill music is the best music.
 
 - kind: record
-  title: Endtroducing.....
-  by: DJ Shadow
+  title: Piano Man
+  by: Billy Joel
+  year: 1973
+  note: The best part is the irony - The most recognisable tune of the song
+    is on Harmonica.
+
+- kind: record
+  title: Bad
+  by: Michael Jackson
+  year: 1987
+  note: This one is pure history.
+
+- kind: record
+  title: O Sanam
+  by: Lucky Ali
   year: 1996
-  note: Built entirely from other people's records, which this paper considers
-    an honourable tradition.
+  note: Generationally passed down music.

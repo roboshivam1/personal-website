@@ -18,8 +18,8 @@ from PIL import Image, ImageDraw, ImageEnhance, ImageFont, ImageOps, ImageStat
 #  EDIT THIS
 # ══════════════════════════════════════════════════════════════════════
 
-INPUT = "photos/ebike_frame.jpg"           # the original. relative to the project root.
-OUTPUT = "static/img/ebike_frame_dotted.jpg"      # where the finished plate goes.
+INPUT = "photos/HW/acura90nsx.jpg"           # the original. relative to the project root.
+OUTPUT = "static/img/motoring/acura90nsx_dotted.jpg"      # where the finished plate goes.
 
 CONTACT_SHEET = False   # True -> ignore OUTPUT, write a labelled grid of nine
                         # settings next to it. Open it, pick a tile, copy its
