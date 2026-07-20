@@ -12,6 +12,8 @@ hero_caption: The main characters.
 links:
   - label: Repo
     url: https://github.com/roboshivam1/AI-Dialogue-Reel-Generator
+  - label: Try some videos here
+    url: https://www.instagram.com/paheliboojhopython/
 ---
 
 # Paheli & Boojho Were Never Supposed to Become YouTubers

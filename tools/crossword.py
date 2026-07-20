@@ -23,15 +23,22 @@ import yaml
 NUMBER = 1          # puzzle number. bump it each issue.
 
 WORDS = {
-    "HALFTONE": "How this paper prints a photograph (8)",
-    "OBITUARY": "Where dead projects are filed (8)",
-    "JARVIS": "The automation desk's only correspondent (6)",
-    "SOLDER": "It joins, when the iron is hot enough (6)",
-    "GAZETTE": "This publication, in one word (7)",
-    "REDLINE": "A Hot Wheels collector's holy grail, or an engine's limit (7)",
-    "MONSOON": "It arrives late and all at once (7)",
-    "DEK": "The line under the headline (3)",
-    "INK": "What everything here is made of (3)",
+
+    "PROMPT": "Instructions for a very literal machine (6)",
+
+    "TOKEN": "The currency of every LLM (5)",
+
+    "GEMINI": "Google's AI family (6)",
+
+    "WHISPER": "An AI that listens instead of speaks (7)",
+
+    "VECTOR": "Direction with magnitude (6)",
+
+    "LATENT": "Hidden beneath the model (6)",
+
+    "AGENT": "An AI that does more than chat (5)",
+
+    "MEMORY": "What every chatbot claims to have (6)",
 }
 
 OUTPUT = "content/puzzle.yaml"
