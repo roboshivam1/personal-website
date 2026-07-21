@@ -18,8 +18,8 @@ from PIL import Image, ImageDraw, ImageEnhance, ImageFont, ImageOps, ImageStat
 #  EDIT THIS
 # ══════════════════════════════════════════════════════════════════════
 
-INPUT = "photos_local/mnpljpr.png"           # the original. relative to the project root.
-OUTPUT = "static/img/mnpljpr_dotted.png"      # where the finished plate goes.
+INPUT = "photos_local/hc_ln_1.jpg"           # the original. relative to the project root.
+OUTPUT = "static/img/lab_notes_images/hc_ln_1_dotted.jpg"      # where the finished plate goes.
 
 CONTACT_SHEET = False   # True -> ignore OUTPUT, write a labelled grid of nine
                         # settings next to it. Open it, pick a tile, copy its

@@ -23,8 +23,8 @@ from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFont, ImageOps,
 #  EDIT THIS
 # ══════════════════════════════════════════════════════════════════════
 
-INPUT = "photos_local/photography/pic15.PNG"           # the original. relative to the project root.
-OUTPUT = "static/img/photos2/img15_cmyk.PNG"      # where the finished plate goes.
+INPUT = "photos_local/hc_ln_1.jpg"           # the original. relative to the project root.
+OUTPUT = "static/img/lab_notes_images/hc_ln_1_dotted.jpg"      # where the finished plate goes.
 
 MODE = "cmyk"        # "mono" | "duotone" | "cmyk"
 CONTACT_SHEET = False   # True -> a labelled grid of settings next to OUTPUT.
