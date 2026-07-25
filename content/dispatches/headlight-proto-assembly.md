@@ -3,7 +3,7 @@ title: Assembly of the first Headlight Cowl prototype
 dek: 3d prints, foglamps and fevikwik
 date: 2026-07-21
 section: lab-notes
-weight: 50
+weight: 40
 tags: [ebike, hardware, 3D printing]
 hero: /img/lab_notes_images/hc_ln_1_dotted.jpg
 hero_focus: "50% 50%"
