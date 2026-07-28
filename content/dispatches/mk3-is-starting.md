@@ -1,6 +1,6 @@
 ---
 title: The last version?(apparently)
-dek: not adding -final to my directory from names now on. 
+dek: not adding -final to my directory names from now on. 
 date: 2026-07-29
 section: lab-notes
 weight: 50
