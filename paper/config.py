@@ -26,7 +26,7 @@ SITE = {
     # The markets desk. symbol is a 4-letter ticker; repo is owner/name.
     # Placeholder repos — swap in your own.
     "repos": [
-        {"symbol": "JRVS", "repo": "roboshivam1/JARVIS-MK2"},
+        {"symbol": "JRVS", "repo": "roboshivam1/JARVIS-MK3"},
         {"symbol": "SITE", "repo": "roboshivam1/personal-website"},
         {"symbol": "SCHL", "repo": "roboshivam1/School-Content-Engine"},
         {"symbol": "AIRG", "repo": "roboshivam1/AI-Dialogue-Reel-Generator"},
