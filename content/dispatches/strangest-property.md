@@ -2,7 +2,7 @@
 title: The Strangest Kind of Property
 dek: What's the capital investment for that?
 date: 2026-07-31
-section: lab-notes
+section: op-ed
 weight: 40
 hero: /img/lab_notes_images/keychains_dotted.jpg
 hero_focus: "50% 50%"
@@ -10,14 +10,12 @@ hero_caption: what am i w/o my nerdy collections
 tags: [idk man just random thoughts]
 ---
 
-I watched Spider-Man: Brand New Day yesterday, and somewhere between the web-slinging and the third act, my brain wandered off the movie entirely and landed on a stranger question: what is Spider-Man, actually, as property?
+I watched Spider-Man: Brand New Day yesterday, and afterward I kept thinking about something that had nothing to do with the box office - just the sheer strangeness of how far a single thought can travel.
 
-Not as a character. As an asset.
+Somewhere in 1962, a person sat with a blank page and imagined a kid getting bitten by a spider. That's the whole seed. No franchise, no cinematic universe, no toy aisle - just an idea about power and responsibility, small enough to explain to a child in one sentence. And that sentence has been retold, redrawn, reanimated, and reperformed for sixty-plus years, by thousands of different hands, in dozens of languages, and it still lands. It still makes people cry in a theater in 2026.
 
-Sony's film division has, at various points, made more from licensing and box office on this one idea than from entire manufacturing arms of the company. Peel back the suits and villains and post-credit scenes, and the core of it is embarrassingly simple: a teenager gets bitten by a spider, gets powers, loses someone he loves because he didn't use them in time, and decides to spend the rest of his life making up for it. That's it. That's the whole engine. It fits in three sentences and it has generated billions of dollars and forty years of merchandise, theme park rides, and Halloween costumes.
+That's the part I find beautiful. A thought is the lightest thing a person can make - it costs nothing to have, no material, no land, no permission. And yet it's the one kind of creation that doesn't wear out with use. You can tell the same story to a billion people and it isn't diminished; if anything, each retelling adds to it. Every artist who ever drew Spider-Man swinging between two buildings added a little of themselves to the character, and none of it used the original up. Uncle Ben's death has been drawn a thousand times and it still works.
 
-Physical property depreciates. A factory ages, a machine wears down, land needs upkeep. A story doesn't. It only compounds - every new writer, artist, actor, and fan adds another layer of value without spending down the original. Stan Lee wrote a pitch in the 1960s and it's still accruing interest six decades later, in ways he almost certainly couldn't have imagined and - famously - didn't fully benefit from himself.
+What gets me most is how small the original thought was. Not a grand thesis - a feeling. A kid who could've been anyone, doing something wrong-place-right-time, and then choosing to carry the guilt of it into something good. That's a thought almost anyone could have had. But someone actually sat down and had it, on purpose, and wrote it into being. That's the real magic of creation - not that the idea was complicated, but that someone bothered to give it a shape at all, and the shape turned out to be sturdy enough to hold sixty years of other people's imaginations.
 
-That's the part that stays with me. IP is the rare kind of property where the person who makes it and the entity who eventually owns the value of it are so often different people. Kirby didn't own Kirby. Siegel and Shuster didn't own Superman. Stan Lee didn't own Spider-Man - Marvel did, then Disney did. The idea becomes worth more than any factory, and yet the person who had it is frequently the one who benefits least.
-
-Maybe that's the real superpower here. Not wall-crawling. The ability for an idea, once released into the world, to become worth more than anything you could build with your hands - and to belong to whoever holds the paperwork, not whoever thought of it first.
+I think that's what draws me to building things too, even outside of stories - code, machines, whatever. The object is almost never the point. The point is that a thought existed in someone's head, and now it doesn't just live there anymore.
