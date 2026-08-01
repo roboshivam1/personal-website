@@ -10,7 +10,7 @@ about: jarvis-mk2
 
 Six month ago I named a folder JARVIS-MK2-final
 
-I genuinely believed itt.
+I genuinely believed it.
 
 I had planned to make the core assistant, add some features, keep adding a feature or two here and there. I thought I had known what JARVIS was supposed to be. 
 
