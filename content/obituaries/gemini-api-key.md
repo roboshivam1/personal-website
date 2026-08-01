@@ -49,6 +49,6 @@ The key is gone now.
 
 Wherever its mysterious adopter is, I hope they enjoyed the free tokens while they lasted.
 
-Rest in peace.
+Rest in peace man.
 
 You were never supposed to be public.
