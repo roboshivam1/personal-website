@@ -5,7 +5,7 @@ date: 2026-08-02
 born: 2025-12-22
 died: 2026-08-02
 cause_of_death: showed itself to the outside world
-weight: 15
+weight: 30
 tags: [python]
 ---
 
