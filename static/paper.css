@@ -511,7 +511,7 @@ body::before {
 
 /* ---------- the cartoon ---------- */
 .cartoon { border-top: 3px double var(--ink); margin: 1.6rem 0 0; padding-top: .8rem; }
-.cartoon__plate { aspect-ratio: 4/3; }
+.plate { position: relative; overflow: hidden; background: var(--plate-paper); }
 .cartoon__missing {
   border: 1px dashed var(--rule); background: var(--paper-deep);
   padding: 1.4rem 1rem; text-align: center;
