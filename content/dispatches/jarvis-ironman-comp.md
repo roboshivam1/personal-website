@@ -3,7 +3,7 @@ title: Cave, Lab, Paint Job - JARVIS Accidentally Followed Tony Stark's Blueprin
 dek: How'd you solve the icing problem?
 date: 2026-09-04
 section: lab-notes
-weight: 50
+weight: 30
 tags: [JARVIS, enginering]
 about: jarvis-mk2
 ---
