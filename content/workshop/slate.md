@@ -6,9 +6,9 @@ status: shipped
 stack: [Python, FastAPI, Jinja2, HTMX, SQLite, Pydantic, Anthropic Claude, Gemini TTS, Manim]
 weight: 20
 tags: [hackathon, LLM, edtech, Python]
-hero: /img/slate_dotted.jpg
+hero: /img/slate_dotted.png
 hero_focus: "50% 50%"
-hero_caption: SLATE
+hero_caption: SLATE - Structured Learning & Adaptive Teaching Engine
 links:
   - label: Repo
     url: https://github.com/roboshivam1/SLATE
