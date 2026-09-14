@@ -18,8 +18,8 @@ from PIL import Image, ImageDraw, ImageEnhance, ImageFont, ImageOps, ImageStat
 #  EDIT THIS
 # ══════════════════════════════════════════════════════════════════════
 
-INPUT = "photos_local/cartoons/greek_printer.png"           # the original. relative to the project root.
-OUTPUT = "static/img/cartoons/greek_printer_dotted.png"      # where the finished plate goes.
+INPUT = "photos_local/slate.png"           # the original. relative to the project root.
+OUTPUT = "static/img/slate_dotted.png"      # where the finished plate goes.
 
 CONTACT_SHEET = False   # True -> ignore OUTPUT, write a labelled grid of nine
                         # settings next to it. Open it, pick a tile, copy its
