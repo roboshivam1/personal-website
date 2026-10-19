@@ -24,7 +24,7 @@ It wasn't dead. It was on standby. It had just been waiting for someone to press
 
 ### Talking to it
 
-The TV only understands composite, yellow for video and white for audio. My laptop only speaks HDMI. So I picked up a tiny HDMI to AV converter box (Kensonic KX231) from the market. The box says "Full HD 1080p" on it, which is a lie, but a lovable one. It takes 1080p in and squishes it down to whatever a CRT eats.
+The TV only understands composite, yellow for video and white for audio. My laptop only speaks HDMI. So I picked up a tiny HDMI to AV converter box (Kensonic KX231) from the market. I went to the old city of Jaipur, home to the markets of long lost electronics, and caused a pretty bad traffic jam with my car in Nehru Bazaar. Anyways, the box says "Full HD 1080p" on it, which is a lie, but a lovable one. It takes 1080p in and squishes it down to whatever a CRT eats.
 
 MacBook → USB-C hub → HDMI → converter → RCA → Sansui. Switch it to PAL, put the TV on AV and...
 
