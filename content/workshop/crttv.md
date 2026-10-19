@@ -1,4 +1,3 @@
-cat > content/dispatches/crt-not-dead.md <<'EOF'
 ---
 title: The TV Wasn't Dead. It Was Asleep.
 dek: a sansui crt, a red led and a lot of AC/DC
@@ -40,4 +39,3 @@ Not bad for something that was one button press away from the obituaries section
 Now it needs a proper job. A JARVIS terminal maybe. A retro gaming setup maybe. Both maybe.
 
 More when there's more...
-EOF
