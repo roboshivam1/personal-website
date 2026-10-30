@@ -24,7 +24,7 @@ All of it, by the end. Little cards inside the chat with checkboxes, a privacy s
 
 The whole day was fuelled by Coffee Bites. Not coffee. Coffee Bites, the candy. Madhura and I went through an amount I am choosing not to count, on the grounds that the number would become evidence.
 
-Result: [TK: how it went on the 28th]
+Result: not placed. I am not crying. (the gazette is wet and ink bleeds through.)
 
 Honestly the best part was the first test run, my own email coming back with breaches from accounts I didn't even remember making. Somewhere out there a website from my past still knows things about me. ForgetMe's coming for it.
 
