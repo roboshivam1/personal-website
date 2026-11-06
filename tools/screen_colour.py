@@ -23,7 +23,7 @@ from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFont, ImageOps,
 #  EDIT THIS
 # ══════════════════════════════════════════════════════════════════════
 
-INPUT = "photos_local/headlight_cowl_prototype.jpg"           # the original. relative to the project root.
+INPUT = "photos_local/arc.png"           # the original. relative to the project root.
 OUTPUT = "static/img/lab_notes_images/headlight_cowl_prototype_dotted.jpg"      # where the finished plate goes.
 
 MODE = "cmyk"        # "mono" | "duotone" | "cmyk"

@@ -18,14 +18,14 @@ from PIL import Image, ImageDraw, ImageEnhance, ImageFont, ImageOps, ImageStat
 #  EDIT THIS
 # ══════════════════════════════════════════════════════════════════════
 
-INPUT = "photos_local/fetchathon.jpg"           # the original. relative to the project root.
-OUTPUT = "static/img/lab_notes_images/fetchathon_dotted.jpg"      # where the finished plate goes.
+INPUT = "photos_local/arc.png"           # the original. relative to the project root.
+OUTPUT = "static/img/lab_notes_images/arc-reactor-one_dotted.png"      # where the finished plate goes.
 
 CONTACT_SHEET = False   # True -> ignore OUTPUT, write a labelled grid of nine
                         # settings next to it. Open it, pick a tile, copy its
                         # numbers down here, set this back to False, run again.
 
-CELL = 5          # px per dot. 3 = fine, 8 = aggressively printed. THE look knob.
+CELL = 6          # px per dot. 3 = fine, 8 = aggressively printed. THE look knob.
 TARGET = 0.65     # average tone of the plate, 0..1. THE exposure knob.
 GAIN = 1.4        # dot size multiplier. >1 lets dark dots merge, like wet ink.
 ANGLE = 45        # screen angle. 45 is what a real press uses for one colour.
